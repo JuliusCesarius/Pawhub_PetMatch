@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="9"
         android:targetSdkVersion="17" />
 
     <application
@@ -40,14 +40,6 @@
         <activity
             android:name="com.blastic.pawhub_petmatch.EditPetActivity"
             android:label="@string/lblActivityEditPet" >
-        </activity>
-        <activity
-            android:name="com.blastic.pawhub_petmatch.LoginActivity"
-            android:label="@string/title_activity_login" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

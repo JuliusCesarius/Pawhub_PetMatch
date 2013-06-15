@@ -8,7 +8,6 @@
     <string name="lblActivityMatchSettings">Match Settings</string>
     <string name="lblActivityEditPet">Edit Pet</string>
     
-    <string name="title_activity_login">LoginActivity</string>
 	<string name="logoDescription">PawHub</string>
 	<string name="userEditText">User</string>
 	<string name="passwordEditText">Password</string>
