@@ -1,0 +1,144 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".LoginActivity"
+    android:background="@drawable/gradient">
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:contentDescription="@string/logoDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logopawhub"
+        android:layout_centerHorizontal="true"
+      />
+     
+    <LinearLayout
+        android:id="@+id/userEditLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logoImage"
+        android:gravity="center"
+        android:weightSum="10"
+        >
+     
+<EditText
+android:inputType="text"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:hint="@string/userEditText"
+android:layout_weight="6"
+/>
+    
+    </LinearLayout>
+    
+    
+    <LinearLayout
+        android:id="@+id/passwordEditLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userEditLayout"
+        android:gravity="center"
+        android:weightSum="10"
+        >
+
+<EditText
+android:inputType="textPassword"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:hint="@string/passwordEditText"
+android:layout_weight="6"
+/>
+    
+    </LinearLayout>
+    
+<LinearLayout
+android:id="@+id/buttonPH"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:layout_below="@+id/passwordEditLayout"
+android:gravity="center"
+android:paddingBottom="20dp"
+android:paddingTop="30dp"
+>
+
+<ImageButton
+android:id="@+id/loginPawHubButton"
+android:contentDescription="@string/loginPawhubDescription"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:src="@drawable/loginpawhub"
+android:background="@null"
+android:onClick="onBtnPHLogin_Click"
+/>
+
+    </LinearLayout>
+    
+<LinearLayout
+android:id="@+id/buttonFB"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:layout_below="@+id/buttonPH"
+android:paddingBottom="80dp"
+android:gravity="center"
+>
+
+<ImageButton
+android:id="@+id/loginFbButton"
+android:contentDescription="@string/loginFbDescription"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:src="@drawable/loginfb"
+android:background="@null"
+/>
+    </LinearLayout>
+    
+<RelativeLayout
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:layout_alignParentBottom="true"
+android:layout_below="@+id/buttonFB"
+android:background="#7D7979"
+android:gravity="center" >
+    
+<LinearLayout
+android:id="@+id/forgotPassLayout"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:gravity="center"
+android:paddingBottom="10dp">
+
+<TextView
+android:id="@+id/forgotPasswordText"
+android:text="@string/forgotPasswordLink"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textColorLink="#ffffff"
+android:textColor="#ffffff"
+/>
+     </LinearLayout>
+    
+     <LinearLayout
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:layout_below="@+id/forgotPassLayout"
+     android:gravity="center">
+
+<TextView
+android:id="@+id/accountText"
+android:text="@string/accountLink"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textColorLink="#ffffff"
+android:textColor="#ffffff"
+/>
+</LinearLayout>
+
+    
+    </RelativeLayout>
+    
+        
+
+</RelativeLayout>
