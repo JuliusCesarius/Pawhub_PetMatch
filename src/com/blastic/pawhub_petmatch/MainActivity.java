@@ -20,8 +20,6 @@ public class MainActivity extends Activity {
         btnRate = (ImageButton) findViewById(R.id.btnRateAPet);
         btnMatch = (ImageButton) findViewById(R.id.btnPetMatch);
     }
-    
-	
 
 
     @Override
