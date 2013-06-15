@@ -4,5 +4,12 @@
     <string name="app_name">Pawhub_PetMatch</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+    <string name="title_activity_login">LoginActivity</string>
+	<string name="logoDescription">PawHub</string>
+	<string name="userEditText">User</string>
+	<string name="passwordEditText">Password</string>
+	<string name="loginPawhubDescription">Login with Pawhub account</string>
+	<string name="loginFbDescription">Login with Facebook account</string>
+	<string name="forgotPasswordLink"><u><a href="www.google.com">I forgot my password</a></u></string>
+    <string name="accountLink"><a href="www.google.com">I haven\'t an account</a></string>
 </resources>
