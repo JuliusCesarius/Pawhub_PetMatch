@@ -12,7 +12,6 @@ public class JsonAdapter {
 		try {
 			T object = (T) type.newInstance();
 			Field[] fields = type.getDeclaredFields();
-	        System.out.printf("%d fields:%n", fields.length);
 	        for (Field field : fields) {
 	        	Object valueField=null;
 	        	//Verify if exists the field with Camel notation;
@@ -26,20 +25,14 @@ public class JsonAdapter {
 	        		String camelFieldName = ConvertToCamelNotation(field.getName());
 	        		try{
 	        			valueField = jsonObject.get(camelFieldName);
-	        			Log.i("valueFiels", valueField.toString());
 	        		} catch (JSONException e) {
 	        			e.printStackTrace();
 	        		}
-        			Log.i("valueFiels", valueField.toString());
 	        	}
 	        	//Assign the value of the jsonObject
-
-
 				if(!field.isAccessible()) {
 					field.setAccessible(true);
 				}
-	        	Log.i("cast",valueField.getClass().toString());
-	        	Log.i("cast",field.getType().toString());
 	        	field.set(object, valueField);	        	
 	        	
 	        } 
