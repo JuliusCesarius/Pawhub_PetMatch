@@ -5,6 +5,8 @@ import java.lang.reflect.Field;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.util.Log;
+
 public class JsonAdapter {
 	public static <T> T bindJsonToClass (Class<T> type, JSONObject jsonObject){
 		try {
@@ -23,13 +25,23 @@ public class JsonAdapter {
 	        	if(valueField == null){
 	        		String camelFieldName = ConvertToCamelNotation(field.getName());
 	        		try{
-	        			valueField = jsonObject.getString(camelFieldName);
+	        			valueField = jsonObject.get(camelFieldName);
+	        			Log.i("valueFiels", valueField.toString());
 	        		} catch (JSONException e) {
 	        			e.printStackTrace();
 	        		}
+        			Log.i("valueFiels", valueField.toString());
 	        	}
 	        	//Assign the value of the jsonObject
-	        	field.set(object, field.getType().cast(valueField));
+
+
+				if(!field.isAccessible()) {
+					field.setAccessible(true);
+				}
+	        	Log.i("cast",valueField.getClass().toString());
+	        	Log.i("cast",field.getType().toString());
+	        	field.set(object, valueField);	        	
+	        	
 	        } 
 			return object;
 		} catch (InstantiationException e) {
