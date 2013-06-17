@@ -232,14 +232,18 @@ containing a value of this type.
         public static final int btn_more=0x7f020001;
         public static final int btn_rate_main=0x7f020002;
         public static final int btnfinish=0x7f020003;
-        public static final int gradient=0x7f020004;
-        public static final int ic_launcher=0x7f020005;
-        public static final int image_gray=0x7f020006;
-        public static final int loginfb=0x7f020007;
-        public static final int loginpawhub=0x7f020008;
-        public static final int logo_main=0x7f020009;
-        public static final int logopawhub=0x7f02000a;
-        public static final int pet_picture=0x7f02000b;
+        public static final int btnmatchmypet=0x7f020004;
+        public static final int gradient=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int image_gray=0x7f020007;
+        public static final int loginfb=0x7f020008;
+        public static final int loginpawhub=0x7f020009;
+        public static final int logo_main=0x7f02000a;
+        public static final int logopawhub=0x7f02000b;
+        public static final int pet_picture=0x7f02000c;
+        public static final int petask=0x7f02000d;
+        public static final int petimage=0x7f02000e;
+        public static final int pettorate=0x7f02000f;
     }
     public static final class id {
         public static final int LinearLayout1=0x7f040013;
@@ -250,7 +254,7 @@ containing a value of this type.
         public static final int LinearLayout6=0x7f040021;
         public static final int LinearLayout7=0x7f04002f;
         public static final int accountText=0x7f04003f;
-        public static final int action_settings=0x7f04004f;
+        public static final int action_settings=0x7f040066;
         public static final int alignBounds=0x7f040002;
         public static final int alignMargins=0x7f040003;
         public static final int blPetBirth=0x7f04001d;
@@ -259,13 +263,19 @@ containing a value of this type.
         public static final int btnEditAPet=0x7f040034;
         public static final int btnPetMatch=0x7f040041;
         public static final int btnRateAPet=0x7f040023;
+        public static final int btnRatePet=0x7f04005d;
         public static final int buttonFB=0x7f04003b;
         public static final int buttonPH=0x7f040039;
         public static final int center=0x7f04000c;
         public static final int center_horizontal=0x7f04000a;
         public static final int center_vertical=0x7f040008;
+        public static final int chkSameType=0x7f040051;
         public static final int clip_horizontal=0x7f04000f;
         public static final int clip_vertical=0x7f04000e;
+        public static final int cutenessLayout=0x7f04005a;
+        public static final int cutenessRating=0x7f040049;
+        public static final int cutenessRow=0x7f040047;
+        public static final int cutenessText=0x7f040048;
         public static final int dateBirth=0x7f040020;
         public static final int end=0x7f040011;
         public static final int fill=0x7f04000d;
@@ -273,47 +283,64 @@ containing a value of this type.
         public static final int fill_vertical=0x7f040009;
         public static final int forgotPassLayout=0x7f04003d;
         public static final int forgotPasswordText=0x7f04003e;
+        public static final int funnyLayout=0x7f04005c;
+        public static final int funnyRating=0x7f04004f;
+        public static final int funnyRow=0x7f04004d;
+        public static final int funnyText=0x7f04004e;
         public static final int horizontal=0x7f040000;
-        public static final int icon=0x7f04004b;
-        public static final int lblCategory=0x7f04004c;
+        public static final int ibtnMatch=0x7f040055;
+        public static final int icon=0x7f040062;
+        public static final int imgAskPet=0x7f040054;
+        public static final int imgPet=0x7f040056;
+        public static final int imgPetToRate=0x7f040053;
+        public static final int information=0x7f040042;
+        public static final int lblCategory=0x7f040063;
         public static final int lblEditPet=0x7f040012;
         public static final int lblEditUser=0x7f040024;
         public static final int lblLastName=0x7f040027;
         public static final int lblName=0x7f040026;
         public static final int lblPetBreed=0x7f040016;
-        public static final int lblPetNameRates=0x7f04004d;
+        public static final int lblPetNameRates=0x7f040064;
         public static final int lblPetPicture=0x7f04001e;
         public static final int lblPetType=0x7f040015;
-        public static final int lblPetVotes=0x7f04004e;
+        public static final int lblPetVotes=0x7f040065;
+        public static final int lblSameType=0x7f040052;
         public static final int lblUserBirth=0x7f04002b;
         public static final int lblUserName=0x7f040025;
         public static final int lblUserPets=0x7f04002d;
         public static final int lblUserPicture=0x7f04002c;
         public static final int left=0x7f040006;
         public static final int listGlobalRates=0x7f040035;
-        public static final int listMyRates=0x7f040045;
         public static final int loginFbButton=0x7f04003c;
         public static final int loginPawHubButton=0x7f04003a;
         public static final int logoImage=0x7f040036;
         public static final int logoMain=0x7f040040;
+        public static final int lovelyLayout=0x7f040059;
+        public static final int lovelyRating=0x7f040046;
+        public static final int lovelyRow=0x7f040044;
+        public static final int lovelyText=0x7f040045;
+        public static final int nameLayout=0x7f040058;
         public static final int passwordEditLayout=0x7f040038;
         public static final int petPicture=0x7f040022;
         public static final int petPicture1=0x7f040030;
         public static final int petPicture2=0x7f040031;
         public static final int petPicture3=0x7f040032;
         public static final int petPlus=0x7f040033;
-        public static final int radio0=0x7f040048;
-        public static final int radio1=0x7f040049;
-        public static final int radioGroup1=0x7f040047;
+        public static final int radio0=0x7f04005f;
+        public static final int radio1=0x7f040060;
+        public static final int radioGroup1=0x7f04005e;
+        public static final int ratingLayout=0x7f040043;
         public static final int right=0x7f040007;
+        public static final int sameTypeLayout=0x7f040050;
+        public static final int setRatingsLayout=0x7f040057;
+        public static final int softnessLayout=0x7f04005b;
+        public static final int softnessRating=0x7f04004c;
+        public static final int softnessRow=0x7f04004a;
+        public static final int softnessText=0x7f04004b;
         public static final int spinEditBreed=0x7f04001a;
         public static final int spinEditType=0x7f040019;
         public static final int start=0x7f040010;
-        public static final int switch1=0x7f04004a;
-        public static final int tabGlobalRates=0x7f040046;
-        public static final int tabMyRates=0x7f040044;
-        public static final int tabRatePet=0x7f040042;
-        public static final int textView1=0x7f040043;
+        public static final int switch1=0x7f040061;
         public static final int top=0x7f040004;
         public static final int txtLastName=0x7f04002a;
         public static final int txtName=0x7f040029;
@@ -330,9 +357,10 @@ containing a value of this type.
         public static final int activity_login=0x7f030003;
         public static final int activity_main=0x7f030004;
         public static final int activity_match_settings=0x7f030005;
-        public static final int activity_rate_my_pet=0x7f030006;
-        public static final int compound_button=0x7f030007;
-        public static final int rowlayout=0x7f030008;
+        public static final int activity_petmatch=0x7f030006;
+        public static final int activity_rate_my_pet=0x7f030007;
+        public static final int compound_button=0x7f030008;
+        public static final int rowlayout=0x7f030009;
     }
     public static final class menu {
         public static final int edit_pet=0x7f090000;
@@ -342,48 +370,68 @@ containing a value of this type.
         public static final int login=0x7f090004;
         public static final int main=0x7f090005;
         public static final int match_settings=0x7f090006;
-        public static final int rate_my_pet=0x7f090007;
-        public static final int static_demo=0x7f090008;
+        public static final int petmatch=0x7f090007;
+        public static final int rate_my_pet=0x7f090008;
+        public static final int static_demo=0x7f090009;
     }
     public static final class string {
-        public static final int accountLink=0x7f06000d;
+        public static final int accountLink=0x7f06000a;
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
-        public static final int forgotPasswordLink=0x7f06000c;
+        public static final int btnRatePet=0x7f060017;
+        /**  Strings para RateMyPet Activity 
+         */
+        public static final int contentDescriptionImgPet=0x7f060015;
+        public static final int contentDescriptionPetMatch=0x7f060012;
+        public static final int cutenessText=0x7f06000e;
+        public static final int forgotPasswordLink=0x7f060009;
+        public static final int funnyText=0x7f060010;
         public static final int hello_world=0x7f060002;
-        public static final int lblActivityEditPet=0x7f060005;
-        public static final int lblActivityMatchSettings=0x7f060004;
-        public static final int lblActivityRatePet=0x7f060003;
-        public static final int lblEditPet=0x7f060011;
-        public static final int lblEditUser=0x7f06001a;
-        public static final int lblFinish=0x7f060022;
-        public static final int lblGenre1=0x7f060015;
-        public static final int lblGenre2=0x7f060016;
-        public static final int lblLastName=0x7f06001d;
-        public static final int lblLogo=0x7f060010;
-        public static final int lblName=0x7f06001c;
-        public static final int lblPetBirth=0x7f060017;
-        public static final int lblPetBreed=0x7f060014;
-        public static final int lblPetMatch=0x7f06000e;
-        public static final int lblPetName=0x7f060012;
-        public static final int lblPetPicture=0x7f060018;
-        public static final int lblPetType=0x7f060013;
-        public static final int lblPlus=0x7f060021;
-        public static final int lblRatePet=0x7f06000f;
-        public static final int lblUserBirth=0x7f06001e;
-        public static final int lblUserName=0x7f06001b;
-        public static final int lblUserPets=0x7f060020;
-        public static final int lblUserPicture=0x7f06001f;
-        public static final int loginFbDescription=0x7f06000b;
-        public static final int loginPawhubDescription=0x7f06000a;
-        public static final int logoDescription=0x7f060007;
-        public static final int passwordEditText=0x7f060009;
-        public static final int title_activity_edit_user=0x7f060019;
-        public static final int title_activity_global_rates=0x7f060023;
-        public static final int title_activity_list_view_example=0x7f060025;
-        public static final int title_activity_login=0x7f060006;
-        public static final int title_activity_static_demo=0x7f060024;
-        public static final int userEditText=0x7f060008;
+        public static final int ibtnMatch=0x7f060013;
+        public static final int lblActivityEditPet=0x7f06001a;
+        public static final int lblActivityMatchSettings=0x7f060019;
+        public static final int lblActivityRatePet=0x7f060018;
+        public static final int lblEditPet=0x7f06001e;
+        public static final int lblEditUser=0x7f060027;
+        public static final int lblFinish=0x7f06002f;
+        public static final int lblGenre1=0x7f060022;
+        public static final int lblGenre2=0x7f060023;
+        public static final int lblLastName=0x7f06002a;
+        public static final int lblLogo=0x7f06001d;
+        public static final int lblName=0x7f060029;
+        public static final int lblPetBirth=0x7f060024;
+        public static final int lblPetBreed=0x7f060021;
+        public static final int lblPetMatch=0x7f06001b;
+        public static final int lblPetName=0x7f06001f;
+        public static final int lblPetPicture=0x7f060025;
+        public static final int lblPetType=0x7f060020;
+        public static final int lblPlus=0x7f06002e;
+        public static final int lblRatePet=0x7f06001c;
+        public static final int lblUserBirth=0x7f06002b;
+        public static final int lblUserName=0x7f060028;
+        public static final int lblUserPets=0x7f06002d;
+        public static final int lblUserPicture=0x7f06002c;
+        public static final int loginFbDescription=0x7f060008;
+        public static final int loginPawhubDescription=0x7f060007;
+        public static final int logoDescription=0x7f060004;
+        public static final int lovelyText=0x7f06000d;
+        public static final int passwordEditText=0x7f060006;
+        public static final int petName=0x7f060016;
+        public static final int sameType=0x7f060011;
+        public static final int softnessText=0x7f06000f;
+        /**  Strings para PetMatch Activity 
+         */
+        public static final int textPreferences=0x7f06000c;
+        public static final int title_activity_edit_user=0x7f060026;
+        public static final int title_activity_global_rates=0x7f060030;
+        public static final int title_activity_list_view_example=0x7f060032;
+        /**  Strings para Login Activity 
+         */
+        public static final int title_activity_login=0x7f060003;
+        public static final int title_activity_petmatch=0x7f06000b;
+        public static final int title_activity_rate_my_pet=0x7f060014;
+        public static final int title_activity_static_demo=0x7f060031;
+        public static final int userEditText=0x7f060005;
     }
     public static final class style {
         /** 
@@ -412,6 +460,7 @@ containing a value of this type.
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f080001;
+        public static final int noActionBar=0x7f080002;
     }
     public static final class styleable {
         /** Attributes that can be used with a GridLayout.

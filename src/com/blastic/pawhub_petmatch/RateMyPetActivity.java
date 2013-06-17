@@ -29,27 +29,26 @@ public class RateMyPetActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_rate_my_pet);
 		
-		//se obtienen resources para las tabs
+		/**se obtienen resources para las tabs
 		Resources res = getResources();
-		/** Obteniendo una referencia al control principal TabHost y preparándolo para su 
+		 Obteniendo una referencia al control principal TabHost y preparándolo para su 
 		 * configuración llamando a su método setup
-		 */
+		 
 		TabHost tabs=(TabHost)findViewById(android.R.id.tabhost);
 		tabs.setup(); 
 		/**Creamos un objeto de tipo TabSpec para cada una de las pestañas que queramos 
 		 * añadir mediante el método newTabSpec, le pasamos como parámetro una etiqueta 
 		 * identificativa "tabRatePet" para tab1 
 		 * 
-		 */
+		 
 		TabHost.TabSpec spec=tabs.newTabSpec("tabRatePet");
 		
-		// Asignamos el layout de contenido correspondiente a la pestaña llamando al método setContent
-		spec.setContent(R.id.tabRatePet);
+
 		
 		/**Indicamos el texto y el icono que queremos mostrar en la pestaña mediante el método setIndicator
 		 * el comportamiento difiere entre las distintas versiones de Android. En Android 4, el comportamiento 
 		 * por defecto del control TabHost es mostrar sólo el texto, o solo el icono, pero no ambos.
-		 */
+		 
 		spec.setIndicator("RATE A PET",
 		res.getDrawable(android.R.drawable.ic_btn_speak_now)); //CAMBIAR ICONO
 		tabs.addTab(spec);
@@ -84,6 +83,7 @@ public class RateMyPetActivity extends Activity {
 		listGlobal = (ListView)findViewById(R.id.listMyRates);
 		ArrayAdapter<String> adaptadorGlobal =  new ArrayAdapter<String>(this, R.layout.rowlayout, R.id.lblCategory, mascotasGlobalNames);
 		listGlobal.setAdapter(adaptadorGlobal);
+		**/
 	}
 
 	@Override
