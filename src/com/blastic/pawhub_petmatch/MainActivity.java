@@ -8,38 +8,35 @@ import android.view.View;
 import android.widget.ImageButton;
 
 public class MainActivity extends Activity {
-	
+
 	ImageButton btnRate;
 	ImageButton btnMatch;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        
-        btnRate = (ImageButton) findViewById(R.id.btnRateAPet);
-        btnMatch = (ImageButton) findViewById(R.id.btnPetMatch);
-    }
-    
-	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
 
+		btnRate = (ImageButton) findViewById(R.id.btnRateAPet);
+		btnMatch = (ImageButton) findViewById(R.id.btnPetMatch);
+	}
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-    
-    public void onBtnRate_Click(View v){
-		//Intent i = new Intent(this,RateMyPetActivity.class);
-    	Intent i = new Intent(this,EditPetActivity.class);
-		startActivity(i);
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
 	}
-	
-	public void onBtnMatch_Click(View v){
-		Intent i = new Intent(this,MatchSettingsActivity.class);
-		startActivity(i);
+
+	public void onBtnRate_Click(View v) {
+		// Intent i = new Intent(this,RateMyPetActivity.class);
+		Intent rateIntend = new Intent(this, EditUserActivity.class);
+		startActivity(rateIntend);
 	}
-    
+
+	public void onBtnMatch_Click(View v) {
+		Intent rateIntend = new Intent(this, MatchSettingsActivity.class);
+		startActivity(rateIntend);
+	}
+
 }
