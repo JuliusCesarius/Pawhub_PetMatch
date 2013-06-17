@@ -1,0 +1,169 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".RateMyPetActivity" 
+    android:background="@drawable/gradient">
+    
+    <ImageView
+        android:id="@+id/imgPet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/setRatingsLayout"
+        android:contentDescription="@string/contentDescriptionImgPet"
+        android:scaleType="centerCrop"
+        android:src="@drawable/petimage" />
+    
+    <RelativeLayout 
+        android:id="@+id/setRatingsLayout"
+        android:background="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgPet"
+        >
+        
+        <LinearLayout 
+            android:id="@+id/nameLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            
+            >
+            <TextView 
+                android:text="@string/petName"
+                android:textColor="#ffffff"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+                />
+            
+        </LinearLayout>
+        
+        
+        <LinearLayout 
+            android:id="@+id/lovelyLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@+id/nameLayout"
+            android:weightSum="3"
+            >
+            
+            <TextView 
+                android:text="@string/lovelyText"
+                android:textColor="#ffffff"
+                android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1"
+            	android:paddingLeft="15dp"
+                />
+            
+            <RatingBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_weight="2"/>
+            
+        </LinearLayout>
+        
+        
+        <LinearLayout 
+            android:id="@+id/cutenessLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@+id/lovelyLayout"
+            android:weightSum="3"
+            >
+            
+            <TextView 
+                android:text="@string/cutenessText"
+                android:textColor="#ffffff"
+                android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1"
+            	android:paddingLeft="15dp"
+                />
+            
+            <RatingBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_weight="2"/>
+            
+        </LinearLayout>
+        
+        
+        <LinearLayout 
+            android:id="@+id/softnessLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@+id/cutenessLayout"
+            android:weightSum="3"
+            >
+            
+            <TextView 
+                android:text="@string/softnessText"
+                android:textColor="#ffffff"
+                android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1"
+            	android:paddingLeft="15dp"
+                />
+            
+            <RatingBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_weight="2"/>
+            
+        </LinearLayout>
+        
+        
+        <LinearLayout 
+            android:id="@+id/funnyLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@+id/softnessLayout"
+            android:weightSum="3"
+            >
+            
+            <TextView 
+                android:text="@string/funnyText"
+                android:textColor="#ffffff"
+                android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1"
+            	android:paddingLeft="15dp"
+                />
+            
+            <RatingBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_weight="2"/>
+            
+        </LinearLayout>
+        
+        <Button 
+            android:id="@+id/btnRatePet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/funnyLayout"
+            android:background="#84c33e"
+            android:text="@string/btnRatePet"
+            />
+        
+    </RelativeLayout>
+    
+    
+    
+
+</RelativeLayout>
