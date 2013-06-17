@@ -1,7 +1,18 @@
 package com.blastic.pawhub_petmatch;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import com.blastic.adapters.JsonAdapter;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.graphics.Shader.TileMode;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -29,6 +40,31 @@ public class EditPetActivity extends Activity {
 		// Apply the adapter to the spinner
 		spinnerBreed.setAdapter(adapterBreed); 
 
+		String str="http://wskrs.com/profile/getkinds";
+		String title;
+		String des;
+	    try{
+	        URL url=new URL(str);
+	        URLConnection urlc=url.openConnection();
+	        BufferedReader bfr=new BufferedReader(new InputStreamReader(urlc.getInputStream()));
+	        String line;
+	        while((line=bfr.readLine())!=null)
+	        {
+		        JSONArray jsa=new JSONArray(line);
+		        for(int i=0;i<jsa.length();i++)
+	           {
+		           JSONObject jsonObject =(JSONObject)jsa.get(i);
+		           Kind kind = JsonAdapter.bindJsonToClass(Kind.class, jsonObject);
+		           if(kind!=null){
+		        	   return;
+		           }
+	           }
+	        }
+	    }
+	    catch(Exception e){
+	    	String a = e.getMessage();
+	    }
+		
 	} 
 	
 
