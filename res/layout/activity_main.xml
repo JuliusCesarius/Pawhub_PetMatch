@@ -2,15 +2,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
+    <ImageView
+        android:id="@+id/logoMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:contentDescription="@string/lblLogo"
+        android:src="@drawable/logo_main" />
+
+    <ImageButton
+        android:id="@+id/btnRateAPet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/logoMain"
+        android:layout_marginTop="30dp"
+        android:contentDescription="@string/lblRatePet"
+        android:onClick="onBtnRate_Click"
+        android:src="@drawable/btn_rate_main" />
+ 
+    	<ImageButton
+        android:id="@+id/btnPetMatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnRateAPet"
+        android:layout_alignRight="@+id/btnRateAPet"
+        android:layout_below="@+id/btnRateAPet"
+        android:onClick="onBtnMatch_Click"
+        android:src="@drawable/btn_match_main"
+        android:contentDescription="@string/lblPetMatch" />
 
 </RelativeLayout>

@@ -1,39 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Pawhub_PetMatch</string>
+    <string name="app_name">PawHub</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
-    <!-- Strings para Login Activity -->
-
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="logoDescription">PawHub</string>
-    <string name="userEditText">User</string>
-    <string name="passwordEditText">Password</string>
-    <string name="loginPawhubDescription">Login with Pawhub account</string>
-    <string name="loginFbDescription">Login with Facebook account</string>
-    <string name="forgotPasswordLink"><u><a href="www.google.com">I forgot my password</a></u></string>
+    <string name="lblActivityRatePet">Rate My Pet</string>
+    <string name="lblActivityMatchSettings">Match Settings</string>
+    <string name="lblActivityEditPet">Edit Pet</string>
+    
+	<string name="logoDescription">PawHub</string>
+	<string name="userEditText">User</string>
+	<string name="passwordEditText">Password</string>
+	<string name="loginPawhubDescription">Login with Pawhub account</string>
+	<string name="loginFbDescription">Login with Facebook account</string>
+	<string name="forgotPasswordLink"><u><a href="www.google.com">I forgot my password</a></u></string>
     <string name="accountLink"><a href="www.google.com">I haven\'t an account</a></string>
-    <string name="title_activity_petmatch">Preferences</string>
+    
+    <string name="lblPetMatch">PetMatch</string>
+    <string name="lblRatePet">RateMyPet</string>
+    <string name="lblLogo">Logo</string>
+    <string name="lblEditPet">Edit Your Pet</string>
+    <string name="lblPetName">Name:</string>
+    <string name="lblPetType">Kind:</string>
 
-    <!-- Strings para PetMatch Activity -->
+    <string-array name="editType_array">
+        <item>Dog</item>
+        <item>Cat</item>
+        <item>Fish</item>
+        <item>Rabbit</item>
+        <item>Rodent</item>
+        <item>Amphibian</item>
+        <item>Reptile</item>
+        <item>Bird</item>
+        <item>Horse</item>
+        <item>Ferret</item>
+        <item>Pig</item>
+        <item>Other</item>
+    </string-array>
 
-    <string name="textPreferences">Choose the ideal characteristics for matching with you and your pets</string>
-    <string name="lovelyText">Lovely</string>
-    <string name="cutenessText">Cuteness</string>
-    <string name="softnessText">Softness</string>
-    <string name="funnyText">Funny</string>
-    <string name="sameType">Same Type</string>
-    <string name="contentDescriptionPetMatch">Pet to Match</string>
-    <string name="ibtnMatch">Match my Pet</string>
-    <string name="title_activity_rate_my_pet">PawHub</string>
-    
-    <!-- Strings para RateMyPet Activity -->
-    
-    <string name="contentDescriptionImgPet">Pet Image</string>
-    <string name="petName"><b>Rocko</b></string>
-    <string name="btnRatePet">Rate Rocko</string>
-    
+    <string name="lblPetBreed">Breed:</string>
+
+    <string-array name="editBreed_array">
+        <item>Breed1</item>
+        <item>Breed2</item>
+        <item>Breed3</item>
+    </string-array>
+
+    <string name="lblGenre1">Male</string>
+    <string name="lblGenre2">Female</string>
+    <string name="lblPetBirth">Day of Birth:</string>
+    <string name="lblPetPicture">Photo:</string>
+    <string name="title_activity_login">Login</string>
 
 </resources>
