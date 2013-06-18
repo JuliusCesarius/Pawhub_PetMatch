@@ -2,15 +2,9 @@ package com.blastic.pawhub_petmatch;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.TabHost;
 
 
 public class RateMyPetActivity extends Activity {
