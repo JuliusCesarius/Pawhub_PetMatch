@@ -31,12 +31,12 @@ public class MainActivity extends Activity {
     
     public void onBtnRate_Click(View v){
 		//Intent i = new Intent(this,RateMyPetActivity.class);
-    	Intent i = new Intent(this,EditPetActivity.class);
+    	Intent i = new Intent(this,EditUserActivity.class);
 		startActivity(i);
 	}
 	
 	public void onBtnMatch_Click(View v){
-		Intent i = new Intent(this,MatchSettingsActivity.class);
+		Intent i = new Intent(this,GlobalRatesActivity.class);
 		startActivity(i);
 	}
     

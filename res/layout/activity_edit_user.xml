@@ -203,6 +203,7 @@
          android:contentDescription="@string/lblUserPicture"
          android:src="@drawable/image_gray"
          android:layout_gravity="left"
+         android:onClick="onBtnUserPic_Click" 
           
           /> 
           
@@ -253,7 +254,7 @@
          android:src="@drawable/btn_more"
          android:layout_gravity="left"
          android:paddingLeft="10dp"
-          
+         android:onClick="onBtnMore_Click" 
           />
               
           </LinearLayout>
