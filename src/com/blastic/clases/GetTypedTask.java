@@ -3,7 +3,6 @@ package com.blastic.clases;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -18,7 +17,7 @@ import com.blastic.pawhub_petmatch.Kind;
 import android.os.AsyncTask;
 
 public class GetTypedTask<T> extends AsyncTask<String, Void, ArrayList<T>> {
-	private T tipo;
+	private Class<T> type;
 	@Override
 	protected ArrayList<T> doInBackground(String... params) {
 		int count = params.length;
@@ -38,7 +37,8 @@ public class GetTypedTask<T> extends AsyncTask<String, Void, ArrayList<T>> {
 			        for(int i=0;i<jsa.length();i++)
 		           {		        	
 			           JSONObject jsonObject =(JSONObject)jsa.get(i);
-			           T o = JsonAdapter.bindJsonToClass(T.class, jsonObject);
+			           JsonAdapter<T> ja = new JsonAdapter<T>();
+			           T o = ja.bindJsonToClass(type, jsonObject);
 			           objects.add(o);
 		           }
 		        }

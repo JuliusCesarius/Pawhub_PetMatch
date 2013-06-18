@@ -5,10 +5,8 @@ import java.lang.reflect.Field;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.util.Log;
-
-public class JsonAdapter {
-	public static <T> T bindJsonToClass (Class<T> type, JSONObject jsonObject){
+public class JsonAdapter<T> {
+	public  T bindJsonToClass (Class<T> type, JSONObject jsonObject){
 		try {
 			T object = (T) type.newInstance();
 			Field[] fields = type.getDeclaredFields();
