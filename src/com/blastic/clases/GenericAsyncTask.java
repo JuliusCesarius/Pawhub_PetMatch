@@ -20,17 +20,14 @@ import android.util.Log;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
-public class GetTypedTask<T> extends AsyncTask<String, Void, ArrayList<T>> {
+public class GenericAsyncTask<T> extends AsyncTask<String, Void, ArrayList<T>> {
 	private Class<T> type;
 	private Context context;
 	int layOut;
 	AdapterView<ArrayAdapter<String>> view;
 	
-	public GetTypedTask(Class<T> tipo, Context contxt, int lay, Object comp){
+	public GenericAsyncTask(Class<T> tipo){
 		type = tipo;
-		context = contxt;
-		layOut = lay;
-		view = (AdapterView<ArrayAdapter<String>>)comp;
 	}
 	
 	@Override
@@ -69,20 +66,5 @@ public class GetTypedTask<T> extends AsyncTask<String, Void, ArrayList<T>> {
 			}
 		}
 		return objects;
-	}
-	protected void onProgressUpdate(Integer... progress) {
-        Log.i("", "msg");
-    }
-	@Override
-	protected void onPostExecute(ArrayList<T> elements){
-		super.onPostExecute(elements);
-//		for (T t : elements) {
-//			t.
-//		}
-		ArrayAdapter<String> kindAdapter = new ArrayAdapter<String>(context,layOut, (String[]) elements.toArray());
-		//Specify the layout to use when the list of choices appears
-		kindAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		// Apply the adapter to the spinner
-		view.setAdapter(kindAdapter);
 	}
 }
