@@ -93,7 +93,7 @@
         <Spinner
             android:id="@+id/spinEditType"  
             android:layout_width="215dp"
-            android:layout_height="wrap_content"
+            android:layout_height="wrap_content"            
          />
         
         <Spinner
