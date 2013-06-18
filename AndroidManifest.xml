@@ -16,18 +16,22 @@
         <activity
             android:name="com.blastic.pawhub_petmatch.MainActivity"
             android:label="@string/app_name" >
-			<intent-filter>
+        </activity>
+        <activity
+            android:name="com.blastic.pawhub_petmatch.LoginActivity"
+            android:label="@string/title_activity_login" >
+            <intent-filter>
 	            <action android:name="android.intent.action.MAIN" />
 	            <category android:name="android.intent.category.LAUNCHER" />
 	        </intent-filter>
         </activity>
         <activity
-            android:name="com.blastic.pawhub_petmatch.LoginActivity"
-            android:label="@string/title_activity_login" >
-        </activity>
-        <activity
             android:name="com.blastic.pawhub_petmatch.RateMyPetActivity"
             android:label="@string/lblActivityRatePet" >
+<!--             <intent-filter> -->
+<!--                 <action android:name="android.intent.action.MAIN" /> -->
+<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--             </intent-filter> -->
         </activity>
         <activity
             android:name="com.blastic.pawhub_petmatch.MatchSettingsActivity"
@@ -40,11 +44,10 @@
         <activity
             android:name="com.blastic.pawhub_petmatch.PetmatchActivity"
             android:label="@string/title_activity_petmatch" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--             <intent-filter> -->
+<!--                 <action android:name="android.intent.action.MAIN" /> -->
+<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--             </intent-filter> -->
         </activity>
     </application>
 
