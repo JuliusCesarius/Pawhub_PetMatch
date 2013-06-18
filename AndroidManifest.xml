@@ -60,6 +60,10 @@
             android:name="com.blastic.pawhub_petmatch.GlobalRatesActivity"
             android:label="@string/title_activity_global_rates" >
         </activity>
+	<activity
+            android:name="com.blastic.pawhub_petmatch.PetmatchResultActivity"
+            android:label="@string/title_activity_petmatch_result" >
+        </activity>
     </application>
 
 </manifest>
