@@ -1,4 +1,4 @@
-package com.blastic.clases;
+package com.blastic.adapters;
 
 import java.util.ArrayList;
 

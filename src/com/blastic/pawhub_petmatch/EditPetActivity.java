@@ -3,6 +3,7 @@ package com.blastic.pawhub_petmatch;
 import java.util.ArrayList;
 
 import com.blastic.clases.GetTypedTask;
+import com.blastic.clases.Kind;
 
 import android.os.AsyncTask;
 import android.os.Bundle;

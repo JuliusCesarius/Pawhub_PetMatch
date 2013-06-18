@@ -1,12 +1,12 @@
 
-package com.blastic.pawhub_petmatch;
+package com.blastic.clases;
 
-import java.util.List;
+import java.util.UUID;
 
-public class ToCategory{
+public class TopCategory{
    	private String name;
    	private String petName;
-   	private String petid;
+   	private UUID petid;
    	private String picture;
    	private Number rateCategoryId;
    	private Number rates;
@@ -23,10 +23,10 @@ public class ToCategory{
 	public void setPetName(String petName){
 		this.petName = petName;
 	}
- 	public String getPetid(){
+ 	public UUID getPetid(){
 		return this.petid;
 	}
-	public void setPetid(String petid){
+	public void setPetid(UUID petid){
 		this.petid = petid;
 	}
  	public String getPicture(){

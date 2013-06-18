@@ -1,5 +1,5 @@
 
-package com.blastic.pawhub_petmatch;
+package com.blastic.clases;
 
 public class Kind{
    	private Number kindId;
