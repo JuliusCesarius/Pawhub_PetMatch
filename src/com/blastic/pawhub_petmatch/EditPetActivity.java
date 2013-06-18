@@ -12,12 +12,17 @@ import com.blastic.adapters.JsonAdapter;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Shader.TileMode;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 public class EditPetActivity extends Activity {
+	
+	ImageButton btnFinish;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +78,11 @@ public class EditPetActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.edit_pet, menu);
 		return true;
+	}
+	
+	public void onBtnFinish_Click(View v) {
+		Intent i = new Intent(this, RateMyPetActivity.class);
+		startActivity(i);
 	}
 
 }

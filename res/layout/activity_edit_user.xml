@@ -15,7 +15,7 @@
     <!-- android:background="#B3B1B2"  --> 
 
     <TextView
-        android:id="@+id/lblEditPet"
+        android:id="@+id/lblEditUser"
         android:layout_width="match_parent"
         android:layout_height="33dp"
         android:paddingTop="6dp"
@@ -26,7 +26,7 @@
         android:background="#464648"
         android:gravity="left"
         android:lines="5"
-        android:text="@string/lblEditPet"
+        android:text="@string/lblEditUser"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
          />
@@ -35,8 +35,8 @@
         android:id="@+id/LinearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/lblEditPet"
-        android:layout_below="@+id/lblEditPet"
+        android:layout_alignLeft="@+id/lblEditUser"
+        android:layout_below="@+id/lblEditUser"
         android:orientation="vertical"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -44,27 +44,27 @@
         android:paddingTop="@dimen/activity_vertical_margin" >
         
          <TextView
-            android:id="@+id/blPetName"
+            android:id="@+id/lblUserName"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="@string/lblPetName"
+	        android:text="@string/lblUserName"
 	        android:layout_marginTop="10dp"
 	        android:gravity="center"
             />
          
          <TextView
-            android:id="@+id/lblPetType"
+            android:id="@+id/lblName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@string/lblPetType" />
+            android:text="@string/lblName" />
          
          <TextView
-            android:id="@+id/lblPetBreed"
+            android:id="@+id/lblLastName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp" 
-            android:text="@string/lblPetBreed" />
+            android:text="@string/lblLastName" />
          
 
     </LinearLayout>
@@ -82,25 +82,31 @@
         android:paddingTop="@dimen/activity_vertical_margin" >
          
          <EditText
-             android:id="@+id/txtNombre"
+             android:id="@+id/txtUserName"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight="3"
+             android:ems="10"
+             android:inputType="text"
+             tools:ignore="InefficientWeight" />
+
+       <EditText
+             android:id="@+id/txtName"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:layout_weight="3"
              android:ems="10"
              android:inputType="textPersonName"
              tools:ignore="InefficientWeight" />
-
-        <Spinner
-            android:id="@+id/spinEditType"  
-            android:layout_width="215dp"
-            android:layout_height="wrap_content"
-         />
         
-        <Spinner
-            android:id="@+id/spinEditBreed" 
-            android:layout_width="215dp"
-            android:layout_height="wrap_content"
-         />
+        <EditText
+             android:id="@+id/txtLastName"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight="3"
+             android:ems="10"
+             android:inputType="textPersonName"
+             tools:ignore="InefficientWeight" />
 
     </LinearLayout>
     
@@ -131,20 +137,27 @@
         android:paddingTop="@dimen/activity_vertical_margin" >
         
           <TextView
-            android:id="@+id/blPetBirth"
+            android:id="@+id/lblUserBirth"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="@string/lblPetBirth"
+	        android:text="@string/lblUserBirth"
 	        android:layout_marginTop="20dp"
 	        android:gravity="center"
             />
          
          <TextView
-            android:id="@+id/lblPetPicture"
+            android:id="@+id/lblUserPicture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="150dp"
-            android:text="@string/lblPetPicture" />
+            android:text="@string/lblUserPicture" />
+         
+         <TextView
+            android:id="@+id/lblUserPets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:text="@string/lblUserPets" />
 
     </LinearLayout>
     
@@ -184,16 +197,71 @@
          > 
          
           <ImageView
-         android:id="@+id/petPicture"
-         android:layout_width="125dp"
-         android:layout_height="125dp"
+         android:id="@+id/userPicture"
+         android:layout_width="80dp"
+         android:layout_height="80dp"
+         android:contentDescription="@string/lblUserPicture"
+         android:src="@drawable/image_gray"
+         android:layout_gravity="left"
+          
+          /> 
+          
+          <LinearLayout 
+              android:id="@+id/LinearLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:orientation="horizontal"
+              >
+              
+              <ImageView
+         android:id="@+id/petPicture1"
+         android:layout_width="45dp"
+         android:layout_height="45dp"
          android:contentDescription="@string/lblPetPicture"
-         android:src="@drawable/pet_picture" />
+         android:src="@drawable/pet_picture"
+         android:layout_gravity="left"
+         android:paddingLeft="10dp"
+          />
+          
+           <ImageView
+         android:id="@+id/petPicture2"
+         android:layout_width="45dp"
+         android:layout_height="45dp"
+         android:contentDescription="@string/lblPetPicture"
+         android:src="@drawable/pet_picture"
+         android:layout_gravity="left"
+         android:paddingLeft="10dp"
+          
+          />
+           
+             <ImageView
+         android:id="@+id/petPicture3"
+         android:layout_width="45dp"
+         android:layout_height="45dp"
+         android:contentDescription="@string/lblPetPicture"
+         android:src="@drawable/pet_picture"
+         android:layout_gravity="left"
+         android:paddingLeft="10dp"
+          
+          />
+             
+               <ImageView
+         android:id="@+id/petPlus"
+         android:layout_width="45dp"
+         android:layout_height="45dp"
+         android:contentDescription="@string/lblPlus"
+         android:src="@drawable/btn_more"
+         android:layout_gravity="left"
+         android:paddingLeft="10dp"
+          
+          />
+              
+          </LinearLayout>
          
          </LinearLayout>
          
      <ImageButton
-            android:id="@+id/btnRateAPet"
+            android:id="@+id/btnEditAPet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/LinearLayout6"
@@ -207,4 +275,5 @@
 </RelativeLayout> 
     
 </ScrollView>
+
 
