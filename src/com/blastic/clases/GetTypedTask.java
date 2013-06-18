@@ -13,15 +13,32 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.blastic.adapters.JsonAdapter;
-import com.blastic.pawhub_petmatch.Kind;
+import com.blastic.pawhub_petmatch.EditPetActivity;
+
+import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 
 public class GetTypedTask<T> extends AsyncTask<String, Void, ArrayList<T>> {
 	private Class<T> type;
+	private Context context;
+	int layOut;
+	AdapterView<ArrayAdapter<String>> view;
+	
+	public GetTypedTask(Class<T> tipo, Context contxt, int lay, Object comp){
+		type = tipo;
+		context = contxt;
+		layOut = lay;
+		view = (AdapterView<ArrayAdapter<String>>)comp;
+	}
+	
 	@Override
 	protected ArrayList<T> doInBackground(String... params) {
 		int count = params.length;
-
         ArrayList<T> objects =  new ArrayList<T>();	
 		if(count>0){
 			URL url;
@@ -56,8 +73,19 @@ public class GetTypedTask<T> extends AsyncTask<String, Void, ArrayList<T>> {
 		}
 		return objects;
 	}
-
-	protected void onPostExecuted(Kind kind){
-	
+	protected void onProgressUpdate(Integer... progress) {
+        Log.i("", "msg");
+    }
+	@Override
+	protected void onPostExecute(ArrayList<T> elements){
+		super.onPostExecute(elements);
+//		for (T t : elements) {
+//			t.
+//		}
+		ArrayAdapter<String> kindAdapter = new ArrayAdapter<String>(context,layOut, (String[]) elements.toArray());
+		//Specify the layout to use when the list of choices appears
+		kindAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		// Apply the adapter to the spinner
+		view.setAdapter(kindAdapter);
 	}
 }
