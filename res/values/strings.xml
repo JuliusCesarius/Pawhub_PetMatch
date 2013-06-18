@@ -33,7 +33,7 @@
     
     <string name="contentDescriptionImgPet">Pet Image</string>
     <string name="petName"><b>Rocko</b></string>
-    <string name="btnRatePet">Rate Rocko</string>
+    <string name="btnRatePet">Rate <b>Rocko</b></string>
     
     <string name="lblActivityRatePet">Rate My Pet</string>
     <string name="lblActivityMatchSettings">Match Settings</string>
