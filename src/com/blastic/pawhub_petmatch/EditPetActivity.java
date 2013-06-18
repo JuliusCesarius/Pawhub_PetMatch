@@ -4,25 +4,23 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.blastic.adapters.JsonAdapter;
 
+import android.R.string;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Shader.TileMode;
 import android.view.Menu;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.Spinner;
 
 public class EditPetActivity extends Activity {
-	
-	ImageButton btnFinish;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -56,15 +54,24 @@ public class EditPetActivity extends Activity {
 	        while((line=bfr.readLine())!=null)
 	        {
 		        JSONArray jsa=new JSONArray(line);
+		        ArrayList<String> kinds =  new ArrayList<String>();
+	        	//ArrayAdapter<String> arrayAdapter = new  
 		        for(int i=0;i<jsa.length();i++)
-	           {
+	           {		        	
 		           JSONObject jsonObject =(JSONObject)jsa.get(i);
 		           Kind kind = JsonAdapter.bindJsonToClass(Kind.class, jsonObject);
-		           if(kind!=null){
-		        	   return;
-		           }
+		           kinds.add(kind.getName());
 	           }
+		        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(EditPetActivity.this, android.R.layout.simple_list_item_1, kinds);
+		        //lista.SetAdapter
+		        //HijaAsyncTask<String, Void, Kind> at = new AsyncTask<String, Void, Kind>();
+		        //Crear
+		        //execute("URL", etc)
+		        //onBackground()
+		        //onPostExecuted
+		        
 	        }
+	        
 	    }
 	    catch(Exception e){
 	    	String a = e.getMessage();
@@ -78,11 +85,6 @@ public class EditPetActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.edit_pet, menu);
 		return true;
-	}
-	
-	public void onBtnFinish_Click(View v) {
-		Intent i = new Intent(this, RateMyPetActivity.class);
-		startActivity(i);
 	}
 
 }
