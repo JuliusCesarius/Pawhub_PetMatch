@@ -1,6 +1,7 @@
 package com.blastic.pawhub_petmatch;
 
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
@@ -33,5 +34,30 @@ public class EditUserActivity extends Activity {
 		Intent editPetIntend = new Intent(this, RateMyPetActivity.class);
 		startActivity(editPetIntend);
 	}
+	
+public void onBtnMore_Click(View v) {
+		
+		Intent morePetsIntend = new Intent(this, EditPetActivity.class);
+		startActivity(morePetsIntend);
+	}
+
+public void onBtnUserPic_Click(View v) {
+	
+	Intent pickIntent = new Intent();
+	pickIntent.setType("image/*");
+	pickIntent.setAction(Intent.ACTION_GET_CONTENT);
+
+	Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+	String pickTitle = "Select or take a new Picture"; // Or get from strings.xml
+	Intent chooserIntent = Intent.createChooser(pickIntent, pickTitle);
+	chooserIntent.putExtra
+	(
+	  Intent.EXTRA_INITIAL_INTENTS, 
+	  new Intent[] { takePhotoIntent }
+	);
+	
+	startActivityForResult(chooserIntent, -1);
+}
 
 }

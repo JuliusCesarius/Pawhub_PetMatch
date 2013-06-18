@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="70dp"
     android:orientation="horizontal"
     android:background="#464648"
      >
     <ImageView
-        android:id="@+id/icon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:id="@+id/lblPetRatesPicture"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
@@ -27,8 +27,9 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:textColor="#FFFFFF"
-        android:paddingTop="5dp"
+        android:paddingTop="4dp"
         android:textStyle="bold"
+        android:text="lblCat"
          >
         
     </TextView>
@@ -39,8 +40,9 @@
         android:layout_height="wrap_content"
         android:textSize="12sp"
         android:textColor="#FFFFFF"
-        android:paddingTop="5dp"
+        android:paddingTop="3dp"
         android:textStyle="bold"
+        android:text="lblName"
          >
     </TextView> 
         
@@ -48,10 +50,11 @@
         android:id="@+id/lblPetVotes"
        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
+        android:textSize="10sp"
         android:textColor="#FFFFFF"
-        android:paddingTop="5dp"
+        android:paddingTop="3dp"
         android:textStyle="bold"
+        android:text="lblVotes"
          >
     </TextView> 
         

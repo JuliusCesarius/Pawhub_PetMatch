@@ -81,7 +81,7 @@ public class EditPetActivity extends Activity {
 	}
 	
 	public void onBtnFinish_Click(View v) {
-		Intent i = new Intent(this, RateMyPetActivity.class);
+		Intent i = new Intent(this, GlobalRatesActivity.class);
 		startActivity(i);
 	}
 
