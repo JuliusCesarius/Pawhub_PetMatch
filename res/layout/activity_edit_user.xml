@@ -149,14 +149,14 @@
             android:id="@+id/lblUserPicture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="170dp"
             android:text="@string/lblUserPicture" />
          
          <TextView
             android:id="@+id/lblUserPets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="110dp"
             android:text="@string/lblUserPets" />
 
     </LinearLayout>
@@ -197,15 +197,13 @@
          > 
          
           <ImageView
-         android:id="@+id/userPicture"
-         android:layout_width="80dp"
-         android:layout_height="80dp"
-         android:contentDescription="@string/lblUserPicture"
-         android:src="@drawable/image_gray"
-         android:layout_gravity="left"
-         android:onClick="onBtnUserPic_Click" 
-          
-          /> 
+              android:id="@+id/userPicture"
+              android:layout_width="132dp"
+              android:layout_height="138dp"
+              android:layout_gravity="left"
+              android:contentDescription="@string/lblUserPicture"
+              android:onClick="onBtnUserPic_Click"
+              android:src="@drawable/image_gray" />
           
           <LinearLayout 
               android:id="@+id/LinearLayout7"
