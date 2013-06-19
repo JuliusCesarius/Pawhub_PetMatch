@@ -57,87 +57,89 @@ public class EditUserActivity extends Activity {
 
 	public void onBtnUserPic_Click(View v) {
 
-		/*Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-		int code = TAKE_PICTURE;
+		/*
+		 * Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE); int code
+		 * = TAKE_PICTURE;
+		 * 
+		 * Uri output = Uri.fromFile(new File(name));
+		 * intent.putExtra(MediaStore.EXTRA_OUTPUT, output);
+		 * 
+		 * Log.i("INTENTD", intent.toString());
+		 * 
+		 * startActivityForResult(intent, code);
+		 */
 
-		Uri output = Uri.fromFile(new File(name));
-		intent.putExtra(MediaStore.EXTRA_OUTPUT, output);
-
-		Log.i("INTENTD", intent.toString());
-
-		startActivityForResult(intent, code);*/
-		
 		Intent pickIntent = new Intent();
 		pickIntent.setType("image/*");
 		pickIntent.setAction(Intent.ACTION_GET_CONTENT);
 
 		Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
-		String pickTitle = "Select or take a new Picture"; // Or get from strings.xml
+		String pickTitle = "Select or take a new Picture"; // Or get from
+															// strings.xml
 		Intent chooserIntent = Intent.createChooser(pickIntent, pickTitle);
-		chooserIntent.putExtra
-		(
-		  Intent.EXTRA_INITIAL_INTENTS, 
-		  new Intent[] { takePhotoIntent }
-		);
+		chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS,
+				new Intent[] { takePhotoIntent });
 
-		startActivityForResult(chooserIntent, TAKE_PICTURE);
+		startActivityForResult(chooserIntent, 3);
 
 	}
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-	
 		
-		if (requestCode == TAKE_PICTURE) {
+		Log.i("REQUEST CODE",""+requestCode);
+		Log.i("REQUEST CODE",""+resultCode);
 			if (data != null) {
+				
 				/**
 				 * En el caso de una vista previa, obtenemos el extra “data” del
 				 * intent y lo mostramos en el ImageView
 				 */
 				if (data.hasExtra("data")) {
-					picUser.setImageBitmap((Bitmap) data.getParcelableExtra("data"));
+					picUser.setImageBitmap((Bitmap) data
+							.getParcelableExtra("data"));
 				}
 				/**
 				 * De lo contrario es una imagen completa
 				 */
 			} else {
 				/**
-				 * A partir del nombre del archivo ya definido lo buscamos y creamos
-				 * el bitmap para el ImageView
+				 * A partir del nombre del archivo ya definido lo buscamos y
+				 * creamos el bitmap para el ImageView
 				 */
-					picUser.setImageBitmap(BitmapFactory.decodeFile(name));
+				picUser.setImageBitmap(BitmapFactory.decodeFile(name));
 				/**
-				 * Para guardar la imagen en la galería, utilizamos una conexión a
-				 * un MediaScanner
+				 * Para guardar la imagen en la galería, utilizamos una conexión
+				 * a un MediaScanner
 				 */
 				new MediaScannerConnectionClient() {
 					private MediaScannerConnection msc = null;
 					{
-						msc = new MediaScannerConnection(getApplicationContext(),
-								this);
+						msc = new MediaScannerConnection(
+								getApplicationContext(), this);
 						msc.connect();
 					}
 
 					public void onMediaScannerConnected() {
 						msc.scanFile(name, null);
 					}
- 
+
 					public void onScanCompleted(String path, Uri uri) {
 						msc.disconnect();
 					}
 				};
-			}/**
-			* Recibimos el URI de la imagen y construimos un Bitmap a partir de un stream de Bytes
-			*/
-			     } else if (requestCode == SELECT_PICTURE){
-			     Uri selectedImage = data.getData();
-			     InputStream is;
-			     try {
-			     is = getContentResolver().openInputStream(selectedImage);
-			     BufferedInputStream bis = new BufferedInputStream(is);
-			     Bitmap bitmap = BitmapFactory.decodeStream(bis);
-			     picUser.setImageBitmap(bitmap);	
-			     } catch (FileNotFoundException e) {}
-			     }		
+			}
+			
+		/*else if (requestCode == SELECT_PICTURE) {
+			Uri selectedImage = data.getData();
+			InputStream is;
+			try {
+				is = getContentResolver().openInputStream(selectedImage);
+				BufferedInputStream bis = new BufferedInputStream(is);
+				Bitmap bitmap = BitmapFactory.decodeStream(bis);
+				picUser.setImageBitmap(bitmap);
+			} catch (FileNotFoundException e) {
+			}
+		}*/
 	}
 }
