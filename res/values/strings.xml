@@ -33,19 +33,11 @@
     
     <string name="contentDescriptionImgPet">Pet Image</string>
     <string name="petName"><b>Rocko</b></string>
-    <string name="btnRatePet">Rate Rocko</string>
+    <string name="btnRatePet">Rate <b>Rocko</b></string>
     
     <string name="lblActivityRatePet">Rate My Pet</string>
     <string name="lblActivityMatchSettings">Match Settings</string>
     <string name="lblActivityEditPet">Edit Pet</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="logoDescription">PawHub</string>
-    <string name="userEditText">User</string>
-    <string name="passwordEditText">Password</string>
-    <string name="loginPawhubDescription">Login with Pawhub account</string>
-    <string name="loginFbDescription">Login with Facebook account</string>
-    <string name="forgotPasswordLink"><u><a href="www.google.com">I forgot my password</a></u></string>
-    <string name="accountLink"><a href="www.google.com">I haven\'t an account</a></string>
     <string name="lblPetMatch">PetMatch</string>
     <string name="lblRatePet">RateMyPet</string>
     <string name="lblLogo">Logo</string>
@@ -80,7 +72,6 @@
     <string name="lblGenre2">Female</string>
     <string name="lblPetBirth">Day of Birth:</string>
     <string name="lblPetPicture">Photo:</string>
-    <string name="title_activity_login">Login</string>
     <string name="title_activity_edit_user">Edit User</string>
     <string name="lblEditUser">Edit User</string>
     <string name="lblUserName">Username</string>

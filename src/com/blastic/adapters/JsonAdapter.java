@@ -5,12 +5,11 @@ import java.lang.reflect.Field;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class JsonAdapter {
-	public static <T> T bindJsonToClass (Class<T> type, JSONObject jsonObject){
+public class JsonAdapter<T> {
+	public  T bindJsonToClass (Class<T> type, JSONObject jsonObject){
 		try {
-			T object = (T) type.newInstance();
+			T object = type.newInstance();
 			Field[] fields = type.getDeclaredFields();
-	        System.out.printf("%d fields:%n", fields.length);
 	        for (Field field : fields) {
 	        	Object valueField=null;
 	        	//Verify if exists the field with Camel notation;
@@ -23,13 +22,17 @@ public class JsonAdapter {
 	        	if(valueField == null){
 	        		String camelFieldName = ConvertToCamelNotation(field.getName());
 	        		try{
-	        			valueField = jsonObject.getString(camelFieldName);
+	        			valueField = jsonObject.get(camelFieldName);
 	        		} catch (JSONException e) {
 	        			e.printStackTrace();
 	        		}
 	        	}
 	        	//Assign the value of the jsonObject
-	        	field.set(object, field.getType().cast(valueField));
+				if(!field.isAccessible()) {
+					field.setAccessible(true);
+				}
+	        	field.set(object, valueField);	        	
+	        	
 	        } 
 			return object;
 		} catch (InstantiationException e) {
