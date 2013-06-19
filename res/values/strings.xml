@@ -95,14 +95,6 @@
     
     <!-- Strings para Top 20 Category Activity -->
     <string name="title_activity_top20_category">Top 20 Category</string>
+    <string name="votes">239 Votes</string>
     
-    
-    
-<!--     Strings para PetMatch Result Activity -->
-	<string name="lblMatchPet">Match My Pet!</string>
-	<string name="txtRateNumber">4.0</string>
-	<string name="btnFollow">Follow</string>
-	<string name="btnSayHi">Say Hi!</string>
-
-	<string name="title_activity_petmatch_result">Petmatch Result</string>s
 </resources>
