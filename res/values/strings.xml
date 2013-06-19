@@ -103,6 +103,6 @@
 	<string name="txtRateNumber">4.0</string>
 	<string name="btnFollow">Follow</string>
 	<string name="btnSayHi">Say Hi!</string>
-	<string name="title_activity_petmatch_result">Petmatch Result</string>s
 
+	<string name="title_activity_petmatch_result">Petmatch Result</string>s
 </resources>
