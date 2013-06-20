@@ -3,7 +3,12 @@ package com.blastic.pawhub_petmatch;
 import java.io.BufferedInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaScannerConnection;
@@ -12,34 +17,36 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.app.Activity;
-import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class EditUserActivity extends Activity {
+@SuppressLint("SimpleDateFormat")
+public class EditUserActivity extends FragmentActivity {
 
-	ImageButton btnFinish;
-	ImageView picUser;
-
-	String name = "";
-
+	private ImageView pickPhoto;
+	private ImageView takePhoto;
 	private static int TAKE_PICTURE = 1;
-	private static int SELECT_PICTURE = 2;
+	private static int SELECT_PICTURE = 0;
+	private String name = "";
+	public int code;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_user);
 
-		btnFinish = (ImageButton) findViewById(R.id.btnEditAPet);
-		picUser = (ImageView) findViewById(R.id.userPicture);
-		name = Environment.getExternalStorageDirectory().getAbsolutePath()
-				+ "/DCIM/Camera/test.jpg";
+		pickPhoto = (ImageView) findViewById(R.id.userPickPicture);
+		takePhoto = (ImageView) findViewById(R.id.userTakePicture);
+		Date date = new Date();
+		DateFormat df = new SimpleDateFormat("-mm-ss");
+		String newPicFile = "Bild" + df.format(date) + ".jpg";
 
+		name = Environment.getExternalStorageDirectory().getAbsolutePath()
+				+ "/DCIM/Camera/" + newPicFile;
 	}
 
 	@Override
@@ -55,91 +62,93 @@ public class EditUserActivity extends Activity {
 		startActivity(editPetIntend);
 	}
 
-	public void onBtnUserPic_Click(View v) {
+	public void onBtnUserTakePic_Click(View v) {
 
-		/*
-		 * Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE); int code
-		 * = TAKE_PICTURE;
-		 * 
-		 * Uri output = Uri.fromFile(new File(name));
-		 * intent.putExtra(MediaStore.EXTRA_OUTPUT, output);
-		 * 
-		 * Log.i("INTENTD", intent.toString());
-		 * 
-		 * startActivityForResult(intent, code);
+		// showUserDialog();
+		/**
+		 * Intent cameraIntent = new Intent(Intent.ACTION_PICK,
+		 * android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+		 * startActivityForResult(cameraIntent, SELECT_PICTURE);
 		 */
 
-		Intent pickIntent = new Intent();
-		pickIntent.setType("image/*");
-		pickIntent.setAction(Intent.ACTION_GET_CONTENT);
-
-		Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-		String pickTitle = "Select or take a new Picture"; // Or get from
-															// strings.xml
-		Intent chooserIntent = Intent.createChooser(pickIntent, pickTitle);
-		chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS,
-				new Intent[] { takePhotoIntent });
-
-		startActivityForResult(chooserIntent, 3);
+		Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+		startActivityForResult(cameraIntent, TAKE_PICTURE);
 
 	}
 
+	public void onBtnPickUserPic_Click(View v) {
+
+		// showUserDialog();
+
+		Intent cameraIntent = new Intent(Intent.ACTION_PICK,
+				android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+		startActivityForResult(cameraIntent, SELECT_PICTURE);
+
+	}
+
+	public void showUserDialog() {
+		FragmentManager fragment = getSupportFragmentManager();
+		ChoorserDialog chooser = new ChoorserDialog();
+
+		chooser.show(fragment, "Dialog");
+	}
+
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		
-		Log.i("REQUEST CODE",""+requestCode);
-		Log.i("REQUEST CODE",""+resultCode);
+		Log.i("prueba", "result");
+		/**
+		 * Se revisa si la imagen viene de la cámara (TAKE_PICTURE) o de la
+		 * galería (SELECT_PICTURE)
+		 */
+		if (requestCode == TAKE_PICTURE) {
+			/**
+			 * Si se reciben datos en el intent tenemos una vista previa
+			 * (thumbnail)
+			 */
 			if (data != null) {
-				
 				/**
 				 * En el caso de una vista previa, obtenemos el extra “data” del
 				 * intent y lo mostramos en el ImageView
 				 */
 				if (data.hasExtra("data")) {
-					picUser.setImageBitmap((Bitmap) data
+					takePhoto.setImageBitmap((Bitmap) data
 							.getParcelableExtra("data"));
+					pickPhoto.setVisibility(View.INVISIBLE);
+					/**
+					 * Para guardar la imagen en la galería, utilizamos una
+					 * conexión a un MediaScanner
+					 */
+					new MediaScannerConnectionClient() {
+						private MediaScannerConnection msc = null;
+						{
+							msc = new MediaScannerConnection(
+									getApplicationContext(), this);
+							msc.connect();
+						}
+
+						public void onMediaScannerConnected() {
+							msc.scanFile(name, null);
+						}
+
+						public void onScanCompleted(String path, Uri uri) {
+							msc.disconnect();
+						}
+					};
+				} 
 				}
-				/**
-				 * De lo contrario es una imagen completa
-				 */
-			} else {
-				/**
-				 * A partir del nombre del archivo ya definido lo buscamos y
-				 * creamos el bitmap para el ImageView
-				 */
-				picUser.setImageBitmap(BitmapFactory.decodeFile(name));
-				/**
-				 * Para guardar la imagen en la galería, utilizamos una conexión
-				 * a un MediaScanner
-				 */
-				new MediaScannerConnectionClient() {
-					private MediaScannerConnection msc = null;
-					{
-						msc = new MediaScannerConnection(
-								getApplicationContext(), this);
-						msc.connect();
-					}
-
-					public void onMediaScannerConnected() {
-						msc.scanFile(name, null);
-					}
-
-					public void onScanCompleted(String path, Uri uri) {
-						msc.disconnect();
-					}
-				};
-			}
-			
-		/*else if (requestCode == SELECT_PICTURE) {
-			Uri selectedImage = data.getData();
-			InputStream is;
-			try {
-				is = getContentResolver().openInputStream(selectedImage);
-				BufferedInputStream bis = new BufferedInputStream(is);
-				Bitmap bitmap = BitmapFactory.decodeStream(bis);
-				picUser.setImageBitmap(bitmap);
-			} catch (FileNotFoundException e) {
-			}
-		}*/
+			}else if (requestCode == SELECT_PICTURE) {
+				Log.i("prueba", "select");
+				Uri selectedImage = data.getData();
+				InputStream is;
+				try {
+					is = getContentResolver()
+							.openInputStream(selectedImage);
+					BufferedInputStream bis = new BufferedInputStream(is);
+					Bitmap bitmap = BitmapFactory.decodeStream(bis);
+					pickPhoto.setVisibility(View.INVISIBLE);
+					takePhoto.setImageBitmap(bitmap);
+				} catch (FileNotFoundException e) {
+				}
+		}
 	}
+
 }
