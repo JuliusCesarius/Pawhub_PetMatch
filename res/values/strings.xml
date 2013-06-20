@@ -97,4 +97,9 @@
     <string name="title_activity_top20_category">Top 20 Category</string>
     <string name="votes">239 Votes</string>
     
+<!--     Strings para Fragment Tabs -->
+    <string name="tabRateAPet">Rate a pet</string>
+    <string name="tabViewMyRates">View my Rates</string>
+    <string name="tabGLobalRates">Global Rates</string>
+    
 </resources>

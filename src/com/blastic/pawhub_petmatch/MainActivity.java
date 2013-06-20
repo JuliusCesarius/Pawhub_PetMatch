@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void onBtnMatch_Click(View v){
-		Intent i = new Intent(this,GlobalRatesActivity.class);
+		Intent i = new Intent(this,Tabs.class);
 		startActivity(i);
 	}
     
