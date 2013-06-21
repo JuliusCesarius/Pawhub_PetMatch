@@ -44,7 +44,7 @@ public class GenericAsyncTask<T> extends AsyncTask<String, Void, ArrayList<T>> {
 		        while((line=bfr.readLine())!=null)
 		        {
 			        JSONArray jsa=new JSONArray(line);
-		        	//ArrayAdapter<String> arrayAdapter = new			        
+		        	//ArrayAdapter<String> arrayAdapter = new
 			        for(int i=0;i<jsa.length();i++)
 		           {		        	
 			           JSONObject jsonObject =(JSONObject)jsa.get(i);

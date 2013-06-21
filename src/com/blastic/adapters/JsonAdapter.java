@@ -31,7 +31,11 @@ public class JsonAdapter<T> {
 				if(!field.isAccessible()) {
 					field.setAccessible(true);
 				}
-	        	field.set(object, valueField);	        	
+				try{
+					field.set(object, valueField);
+				}catch(Exception ex){
+					ex.printStackTrace();
+				}
 	        	
 	        } 
 			return object;

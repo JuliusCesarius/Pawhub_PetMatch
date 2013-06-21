@@ -58,18 +58,18 @@ public class EditUserActivity extends FragmentActivity {
 
 	public void onBtnFinish_Click(View v) {
 
-		Intent editPetIntend = new Intent(this, RateMyPetActivity.class);
+		Intent ratePetIntend = new Intent(this, RateMyPetActivity.class);
+		startActivity(ratePetIntend);
+	}
+	
+	public void onBtnMore_Click(View v) {
+		Intent editPetIntend = new Intent(this, EditPetActivity.class);
 		startActivity(editPetIntend);
 	}
-
+	
 	public void onBtnUserTakePic_Click(View v) {
 
 		// showUserDialog();
-		/**
-		 * Intent cameraIntent = new Intent(Intent.ACTION_PICK,
-		 * android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-		 * startActivityForResult(cameraIntent, SELECT_PICTURE);
-		 */
 
 		Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		startActivityForResult(cameraIntent, TAKE_PICTURE);
@@ -80,9 +80,9 @@ public class EditUserActivity extends FragmentActivity {
 
 		// showUserDialog();
 
-		Intent cameraIntent = new Intent(Intent.ACTION_PICK,
+		Intent galeryIntent = new Intent(Intent.ACTION_PICK,
 				android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-		startActivityForResult(cameraIntent, SELECT_PICTURE);
+		startActivityForResult(galeryIntent, SELECT_PICTURE);
 
 	}
 
