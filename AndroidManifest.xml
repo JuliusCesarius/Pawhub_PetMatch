@@ -64,8 +64,12 @@
             android:name="com.blastic.pawhub_petmatch.Top20Category"
             android:label="@string/title_activity_top20_category" >
         </activity>
-	<activity
+		<activity
             android:name="com.blastic.pawhub_petmatch.PetmatchResultActivity"
+            android:label="@string/title_activity_petmatch_result" >
+        </activity>
+       	<activity
+            android:name="com.blastic.pawhub_petmatch.MainTabsActivity"
             android:label="@string/title_activity_petmatch_result" >
         </activity>
     </application>
