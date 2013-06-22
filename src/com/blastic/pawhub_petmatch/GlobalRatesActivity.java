@@ -13,26 +13,18 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.blastic.adapters.JsonAdapter;
-import com.blastic.adapters.ListViewTopCategoryAdapter;
-import com.blastic.adapters.SpinKindAdapter;
-import com.blastic.clases.GenericAsyncTask;
-import com.blastic.clases.Kind;
-import com.blastic.clases.TopCategory;
-
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.res.Resources;
-import android.util.Log;
+import android.os.Bundle;
 import android.view.Menu;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TabHost;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.Toast;
+
+import com.blastic.adapters.JsonAdapter;
+import com.blastic.adapters.ListViewMyRatesAdapter;
+import com.blastic.adapters.ListViewTopCategoryAdapter;
+import com.blastic.clases.GenericAsyncTask;
+import com.blastic.clases.TopCategory;
 
 
 public class GlobalRatesActivity extends Activity {
@@ -41,8 +33,7 @@ public class GlobalRatesActivity extends Activity {
 		
 		GenericAsyncTask<TopCategory> getTopCategoryAsyncTask;
 		List<TopCategory> arrayOfList;
-		
-		String[] mascotasMyRatesNames = {"Rocko", "Pucky", "Mr Rodo", "Hanibbal", "Piwy", "Mojito", "Coco", "Oreo"};
+
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -96,11 +87,11 @@ public class GlobalRatesActivity extends Activity {
 
 				//Asignamos valores para el listview de tab2 my rates
 				
-				listMyRates = (ListView)findViewById(R.id.listMyRates);
+				
 				
 				//usamos nuestro layout, asignamos para lblPetNameRates
-				ArrayAdapter<String> adapterMyRates = new ArrayAdapter<String>(this, R.layout.rowlayout, R.id.lblPetNameRates, mascotasMyRatesNames);
-				listMyRates.setAdapter(adapterMyRates);
+				/*ArrayAdapter<String> adapterMyRates = new ArrayAdapter<String>(this, R.layout.rowlayout, R.id.lblPetNameRates, mascotasMyRatesNames);
+				listMyRates.setAdapter(adapterMyRates);*/
 				
 				//Asignamos valores para el listview de tab3 global rates
 				
@@ -165,11 +156,16 @@ public class GlobalRatesActivity extends Activity {
 		
 		@Override
 		protected void onPostExecute(ArrayList<TopCategory> elements) {
+			
 		listGlobal = (ListView)findViewById(R.id.listGlobalRates);
 		ListViewTopCategoryAdapter catAdapter = new ListViewTopCategoryAdapter(GlobalRatesActivity.this, R.layout.rowlayout, elements.toArray(new TopCategory[elements.size()]));
 		catAdapter.setDropDownViewResource(R.layout.rowlayout);
 		listGlobal.setAdapter(catAdapter);
 
+		listMyRates = (ListView)findViewById(R.id.listMyRates);
+		ListViewMyRatesAdapter ratesAdapter = new ListViewMyRatesAdapter(GlobalRatesActivity.this, R.layout.rowlayout, elements.toArray(new TopCategory[elements.size()]));
+		ratesAdapter.setDropDownViewResource(R.layout.rowlayout);
+		listMyRates.setAdapter(ratesAdapter);
 		
 		}
 		
