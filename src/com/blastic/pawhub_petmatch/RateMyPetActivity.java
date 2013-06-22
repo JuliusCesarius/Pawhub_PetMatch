@@ -1,25 +1,30 @@
 package com.blastic.pawhub_petmatch;
 
+import android.annotation.TargetApi;
+import android.app.ActionBar;
+import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.Menu;
 
 
-public class RateMyPetActivity extends Fragment {
+public class RateMyPetActivity extends Activity {
 	
-	public RateMyPetActivity() {
-		// TODO Auto-generated constructor stub
-	}
 	
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-        Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-     // Inflate the layout for this fragment
-      View V = inflater.inflate(R.layout.activity_rate_my_pet, container, false);
-      return V;
+    public void onCreate(Bundle savedInstanceState) {
+        
+		super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_rate_my_pet);
+      ActionBar actionBar = getActionBar();
+      actionBar.setDisplayHomeAsUpEnabled(true);
+    }
+	
+	public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 
 }

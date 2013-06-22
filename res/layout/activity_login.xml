@@ -32,6 +32,7 @@
 	        >
 	     
 			<EditText
+			android:id="@+id/txtUser"
 			android:inputType="text"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
@@ -52,11 +53,12 @@
 	        >
 	
 			<EditText
-			android:inputType="textPassword"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:hint="@string/passwordEditText"
-			android:layout_weight="6"
+			    android:id="@+id/txtPassword"
+				android:inputType="textPassword"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:hint="@string/passwordEditText"
+				android:layout_weight="6"
 			/>
 	    
 	    </LinearLayout>

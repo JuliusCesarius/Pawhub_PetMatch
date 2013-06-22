@@ -65,8 +65,9 @@
             android:label="@string/title_activity_top20_category" >
         </activity>
 		<activity
-            android:name="com.blastic.pawhub_petmatch.PetmatchResultActivity"
-            android:label="@string/title_activity_petmatch_result" >
+            android:name="com.blastic.pawhub_petmatch.PetmatchResult"
+            android:label="@string/title_activity_petmatch_result">
+            
         </activity>
        	<activity
             android:name="com.blastic.pawhub_petmatch.MainTabsActivity"
