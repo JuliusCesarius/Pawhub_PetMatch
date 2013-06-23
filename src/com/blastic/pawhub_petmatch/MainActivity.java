@@ -26,8 +26,10 @@ public class MainActivity extends Activity {
         btnRate = (ImageButton) findViewById(R.id.btnRateAPet);
         btnMatch = (ImageButton) findViewById(R.id.btnPetMatch);
         try{
-			ActionBar actionBar = getActionBar();
-	        actionBar.setDisplayHomeAsUpEnabled(true);
+        	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
+				ActionBar actionBar = getActionBar();
+		        actionBar.setDisplayHomeAsUpEnabled(true);
+        	 }
         }catch(Exception ex){
         	Log.e("version", ex.getMessage());
         }

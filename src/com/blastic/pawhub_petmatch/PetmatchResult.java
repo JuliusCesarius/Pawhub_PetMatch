@@ -19,8 +19,10 @@ public class PetmatchResult extends Activity {
 		setContentView(R.layout.activity_petmatch_result);
         
 		try{
-			ActionBar actionBar = getActionBar();
-	        actionBar.setDisplayHomeAsUpEnabled(true);
+			 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
+					ActionBar actionBar = getActionBar();
+			        actionBar.setDisplayHomeAsUpEnabled(true);
+			 }
         }catch(Exception ex){
         	Log.e("version", ex.getMessage());
         }

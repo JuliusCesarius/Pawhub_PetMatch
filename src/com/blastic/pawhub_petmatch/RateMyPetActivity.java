@@ -31,8 +31,10 @@ public class RateMyPetActivity extends Activity {
 		setContentView(R.layout.activity_rate_my_pet);
 		
         try{
-			ActionBar actionBar = getActionBar();
-	        actionBar.setDisplayHomeAsUpEnabled(true);
+        	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
+				ActionBar actionBar = getActionBar();
+		        actionBar.setDisplayHomeAsUpEnabled(true);
+        	 }
         }catch(Exception ex){
         	Log.e("version", ex.getMessage());
         }

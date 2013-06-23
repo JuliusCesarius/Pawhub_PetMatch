@@ -24,12 +24,13 @@ public class PetmatchActivity extends Activity {
 		setContentView(R.layout.activity_petmatch);
 		
         try{
-			ActionBar actionBar = getActionBar();
-	        actionBar.setDisplayHomeAsUpEnabled(true);
+        	 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
+				ActionBar actionBar = getActionBar();
+		        actionBar.setDisplayHomeAsUpEnabled(true);
+        	 }
         }catch(Exception ex){
         	Log.e("version", ex.getMessage());
         }
-		
 		Images.cropImage(R.drawable.pettorate, R.id.imgPetToRate, this);
 		Images.cropImage(R.drawable.petask, R.id.imgAskPet, this);
 		btnMatch = (Button) findViewById(R.id.btnMatch);
