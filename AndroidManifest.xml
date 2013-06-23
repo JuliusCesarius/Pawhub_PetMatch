@@ -73,8 +73,11 @@
             android:label="@string/title_activity_petmatch_result" >
         </activity>
         <activity
-            android:name="com.blastic.pawhub_petmatch.MyRatesActivity"
-            android:label="@string/title_activity_my_rates" >
+            android:name="com.blastic.pawhub_petmatch.DetailsRate"
+            android:label="@string/title_activity_details_rate" >
+            <intent-filter> 
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
         </activity>
     </application>
 

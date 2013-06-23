@@ -1,14 +1,13 @@
 
 package com.blastic.clases;
 
-import java.util.UUID;
 
-public class TopCategory{
+public class TopCategory{  
    	private String name;
    	private String petName;
-   	private UUID petid;
-   	private String picture;
-   	private Number rateCategoryId;
+   	private String petid;
+   	private String picture;   
+   	private Number rateCategoryId; 
    	private Number rates;
 
  	public String getName(){
@@ -23,10 +22,10 @@ public class TopCategory{
 	public void setPetName(String petName){
 		this.petName = petName;
 	}
- 	public UUID getPetid(){
+ 	public String getPetid(){
 		return this.petid;
 	}
-	public void setPetid(UUID petid){
+	public void setPetid(String petid){
 		this.petid = petid;
 	}
  	public String getPicture(){

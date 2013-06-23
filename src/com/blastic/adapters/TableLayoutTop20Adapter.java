@@ -7,17 +7,16 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnTouchListener;
+import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.blastic.clases.TopCategory;
+import com.blastic.pawhub_petmatch.DetailsRate;
 import com.blastic.pawhub_petmatch.R;
-import com.blastic.pawhub_petmatch.RateMyPetActivity;
-import com.blastic.pawhub_petmatch.Top20Category;
 
 public class TableLayoutTop20Adapter extends ArrayAdapter<TopCategory> {
 
@@ -81,6 +80,8 @@ public class TableLayoutTop20Adapter extends ArrayAdapter<TopCategory> {
 				.findViewById(R.id.lblPetNameRates);
 		holder.lblPetVotes = (TextView) viewContenido
 				.findViewById(R.id.lblPetVotes);
+		holder.lblPetId = (TextView) viewContenido
+				.findViewById(R.id.lblPetId);
 		holder.lblPetRatesPicture = (WebView) viewContenido
 				.findViewById(R.id.lblPetRatesPicture);
 
@@ -109,21 +110,21 @@ public class TableLayoutTop20Adapter extends ArrayAdapter<TopCategory> {
 			holder.lblPetRatesPicture.loadData(builder.toString(), "text/html",
 					"UTF-8");
 		}
-		final String id = "" + topCat.getPetid();
+		final String id = topCat.getPetid();
 		if (holder.lblPetId != null && null != id) {
 			holder.lblPetId.setText(topCat.getPetName());
 			
-			viewContenido.setOnTouchListener(new OnTouchListener() {
+			viewContenido.setOnTouchListener(new OnTouchListener() { 
 
 				@Override
 				public boolean onTouch(View arg0, MotionEvent arg1) {
-					Intent intent=new Intent(context,RateMyPetActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+					Intent intent=new Intent(context, DetailsRate.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 					intent.putExtra("variableName", id);
 				    context.startActivity(intent);
 					return false;
 				}
 				
-			});
+			}); 
 		}
 			counter--;
 		return viewContenido;
