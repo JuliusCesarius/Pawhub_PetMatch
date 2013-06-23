@@ -77,7 +77,7 @@ public class ListViewTopCategoryAdapter extends ArrayAdapter<TopCategory> {
 
 		if (holder.lblPetNameRates != null && null != topCat.getName()
 				&& topCat.getName().trim().length() > 0) {
-			holder.lblPetNameRates.setTextSize(25);
+			holder.lblPetNameRates.setTextSize(22);
 			holder.lblPetNameRates.setPadding(0, -15, 0, 0);
 			holder.lblCategory.setText("");
 			holder.lblPetVotes.setText("");

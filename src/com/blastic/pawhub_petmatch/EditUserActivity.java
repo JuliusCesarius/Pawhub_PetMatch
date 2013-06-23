@@ -59,7 +59,7 @@ public class EditUserActivity extends FragmentActivity {
 
 	public void onBtnFinish_Click(View v) {
 
-		Intent ratePetIntend = new Intent(this, RateMyPetActivity.class);
+		Intent ratePetIntend = new Intent(this, MainTabsActivity.class);
 		startActivity(ratePetIntend);
 	}
 	

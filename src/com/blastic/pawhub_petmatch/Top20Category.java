@@ -119,7 +119,6 @@ public class Top20Category extends Activity {
 			TableLayoutTop20Adapter catAdapter = new TableLayoutTop20Adapter(Top20Category.this, R.layout.tablerow_layout, elements.toArray(new TopCategory[elements.size()]));
 			catAdapter.setDropDownViewResource(R.layout.tablerow_layout);
 			listTop20.setAdapter(catAdapter);
-			Log.i("nums", "" + elements.size());
 
 		}
 

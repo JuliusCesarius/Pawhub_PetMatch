@@ -18,8 +18,8 @@ public class MainTabsActivity extends FragmentActivity {
 	    mTabHost.addTab(mTabHost.newTabSpec("tab1").setIndicator("Rate a Pet"),
 	            RateMyPetActivityFragment.class, null);
 	    mTabHost.addTab(mTabHost.newTabSpec("tab2").setIndicator("View My Rates"),
-	    		RateMyPetActivityFragment.class, null);
+	    		MyRatesActivityFragment.class, null);
 	    mTabHost.addTab(mTabHost.newTabSpec("tab3").setIndicator("Global Rates"),
-	    		RateMyPetActivityFragment.class, null);
+	    		GlobalRatesActivityFragment.class, null);
 	}
 }
