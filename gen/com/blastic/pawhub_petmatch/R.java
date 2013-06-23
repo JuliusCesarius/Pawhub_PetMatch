@@ -63,9 +63,9 @@ public final class R {
         public static final int LinearLayout7=0x7f09001c;
         public static final int LinearLayout8=0x7f09001e;
         public static final int LinearLayout9=0x7f09001f;
-        public static final int about=0x7f090065;
+        public static final int about=0x7f090068;
         public static final int accountText=0x7f090034;
-        public static final int action_settings=0x7f090066;
+        public static final int action_settings=0x7f090069;
         public static final int blPetBirth=0x7f09000b;
         public static final int blPetName=0x7f090002;
         public static final int btnEditAPet=0x7f090024;
@@ -96,6 +96,9 @@ public final class R {
         public static final int imgPetLayout=0x7f09004d;
         public static final int imgPetToRate=0x7f090048;
         public static final int information=0x7f090037;
+        public static final int layoutHTable=0x7f090065;
+        public static final int layoutTableTop20=0x7f090059;
+        public static final int layoutVTable=0x7f090066;
         public static final int lblCategory=0x7f090062;
         public static final int lblEditPet=0x7f090000;
         public static final int lblEditUser=0x7f090012;
@@ -103,6 +106,7 @@ public final class R {
         public static final int lblMatchPet=0x7f09004b;
         public static final int lblName=0x7f090014;
         public static final int lblPetBreed=0x7f090004;
+        public static final int lblPetId=0x7f090067;
         public static final int lblPetNameRates=0x7f090063;
         public static final int lblPetPicture=0x7f09000c;
         public static final int lblPetRatesPicture=0x7f090061;
@@ -146,7 +150,6 @@ public final class R {
         public static final int tabGlobalRates=0x7f090029;
         public static final int tabMyRates=0x7f090027;
         public static final int tabRatePet=0x7f090025;
-        public static final int tableTop20=0x7f090059;
         public static final int textView1=0x7f090026;
         public static final int txtLastName=0x7f090018;
         public static final int txtName=0x7f090017;
