@@ -8,18 +8,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MyRatesActivity" >
 
-<LinearLayout android:id="@+id/tabMyRates"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal" >
-
-    <ListView
-        android:id="@+id/listGlobalRates"
+    <LinearLayout
+        android:id="@+id/tabMyRates"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:footerDividersEnabled="false" >
-    </ListView>
+        android:orientation="horizontal" >
 
-</LinearLayout>
+        <ListView
+            android:id="@+id/listMyRates"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:footerDividersEnabled="false" >
+        </ListView>
+    </LinearLayout>
 
 </RelativeLayout>

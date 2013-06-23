@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
     
     public void onBtnRate_Click(View v){
 		//Intent i = new Intent(this,RateMyPetActivity.class);
-    	Intent i = new Intent(this,GlobalRatesActivity.class);
+    	Intent i = new Intent(this,MainTabsActivity.class);
 		startActivity(i);
 	}
 	
