@@ -64,14 +64,20 @@
             android:name="com.blastic.pawhub_petmatch.Top20Category"
             android:label="@string/title_activity_top20_category" >
         </activity>
-		<activity
+        <activity
             android:name="com.blastic.pawhub_petmatch.PetmatchResult"
-            android:label="@string/title_activity_petmatch_result">
-            
+            android:label="@string/title_activity_petmatch_result" >
         </activity>
-       	<activity
+        <activity
             android:name="com.blastic.pawhub_petmatch.MainTabsActivity"
             android:label="@string/title_activity_petmatch_result" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.blastic.pawhub_petmatch.DetailsRate"
+            android:label="@string/title_activity_details_rate" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

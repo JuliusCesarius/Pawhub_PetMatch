@@ -2,115 +2,167 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".DetailsRate" >
+    tools:context=".DetailsRate"
+    android:background="#464648"
+     >
+     
+    <LinearLayout 
+        android:id="@+id/subtitleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        >
 
-	<ImageView
-	    android:id="@+id/imgPetDetails"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:contentDescription="@string/contentDescriptionImgPet"
-	    android:src="@drawable/petimage" />
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:text="@string/subtitleDetailsRate"
+	        android:textColor="#FFFFFF"
+	        android:textSize="20sp" />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/imgPetDetailsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_below="@+id/subtitleLayout"
+        >
+    
+	    <ImageView
+	        android:id="@+id/imgPetDetails"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="@string/contentDescriptionImgPet"
+	        android:scaleType="center"
+	        android:src="@drawable/big_rocko" />
+	    
+	</LinearLayout>
 	
 	<TableLayout 
-	    android:background="#464648"
-	    android:layout_width="match_parent"
+	    
+	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_below="@+id/imgPetDetails">
+	    android:layout_below="@+id/imgPetDetailsLayout"
+	    android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:id="@+id/tableLayoutOwner"
+        >
 	
-	<TableRow >
-	    
-	    <TableLayout 
+		<TableRow
 		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:collapseColumns=""
-	        >
-	        <TableRow 
-	            android:layout_width="match_parent"
-	    		android:layout_height="wrap_content">
-	    
-					<TextView 
-					    android:id="@+id/txtNamePet"
-					    android:layout_width="wrap_content"
-					    android:layout_height="wrap_content"
-					    android:text="@string/txtNamePet"
-					    android:textColor="#FFFFFF"
-					    android:textSize="40sp"
-					    />
-
-			</TableRow>
-		    
+		    android:layout_height="wrap_content" >
+	 
+			<TextView 
+			    android:id="@+id/txtNamePet"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/txtNamePet"
+			    android:textColor="#FFFFFF"
+			    android:textSize="40sp"
+			    />
 			
-	        <TableRow 
-	            android:layout_width="match_parent"
-	    		android:layout_height="wrap_content">
-			        
-			        <TextView 
-				    android:id="@+id/txtOwner"
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:text="@string/txtOwner"
-				    android:textColor="#FFFFFF"
-				    android:textSize="20sp"
-				    />
-			        
-		    </TableRow>
-	    </TableLayout>
-
-	    <TableLayout
-	        android:layout_height="match_parent"
-	        android:gravity="right" >
-
-	        <TableRow
-	            android:layout_height="match_parent"
-	            android:layout_gravity="right"
-	            android:gravity="right" >
-
-<!-- 	            <ImageView -->
-<!-- 	                android:layout_gravity="right" -->
-<!-- 	                android:src="@drawable/greenbackground" /> -->
-	        </TableRow>
-	        
-		    <TableRow >
-			    <TextView
-			        android:text="4.8"
-			        android:textColor="#FFFFFF"
-			        android:textSize="20dp" />
-			
-			</TableRow>
-			
-		    <TableRow >
-		        
-		        <RatingBar 
-		            android:id="@+id/ratingBarIndicator"
-		            style="@style/CustomRatingBar"
-		            />
-		        
-		    </TableRow>
-		    
-		    <TableRow>
-		        
-		        <TextView 
-		            android:text="239"
-		            android:textColor="#FFFFFF"/>
-		    </TableRow>
-		
-	    </TableLayout>
-    </TableRow>
-    <TableRow >
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:scaleType="center"
-            android:src="@drawable/android_share_icon" />
-        
-    </TableRow>
-		
-	</TableLayout>
+		</TableRow>
 	
+	    <TableRow
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+    
+	        <TextView 
+			    android:id="@+id/txtOwner"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/txtOwner"
+			    android:textColor="#FFFFFF"
+			    android:textSize="20sp"
+		    />
+	     </TableRow>
+	     
+<!-- 	    <TableRow  -->
+<!-- 	        android:layout_width="wrap_content" -->
+<!-- 	        android:layout_height="wrap_content" -->
+<!-- 	        > -->
+	        
+		    
+<!-- 	    </TableRow> -->
+	    
+	    
+     </TableLayout>
+
+     <ImageButton
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/tableLayoutOwner"
+         android:scaleType="center"
+         android:src="@drawable/android_share_icon"
+         android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+     
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tableLayoutOwner"
+        android:layout_below="@+id/imgPetDetailsLayout"
+	    android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin" 
+        android:gravity="center">
+	
+
+		
+		<TableRow android:layout_gravity="center"
+		    android:gravity="center"
+		    android:background="@drawable/greenbackground"
+		    android:id="@+id/valueRate">
+		      
+		    <TextView
+		        android:text="@string/txtRateNumber"
+		        android:textSize="30sp"
+		        android:gravity="center"
+		        android:layout_gravity="center" 
+		        android:paddingTop="10dp"
+		        android:paddingBottom="20dp"/>
+		</TableRow>
+		
+		<TableRow 
+		    android:layout_gravity="center"
+		    android:gravity="center"
+		    >
+		
+	       <RatingBar 
+	           android:id="@+id/ratingBarIndicator"
+	           style="@style/CustomRatingBar"
+	           android:isIndicator="true"
+	           android:numStars="5"
+	           android:rating="4.0"
+	           android:layout_height="45dp"
+	           android:gravity="center"
+	           android:layout_gravity="center"
+	           android:paddingTop="10dp"	
+	           />
+		</TableRow>
+		 
+	    <TableRow 
+	        android:layout_gravity="center"
+		    android:gravity="center">
+		
+			<TextView 
+	           android:text="239"
+	           android:textColor="#FFFFFF"
+	           android:gravity="center"
+		       android:layout_gravity="center"
+		       android:textSize="20sp"/>
+		</TableRow>
+
+        
+        
+    </TableLayout>
+
 	
     
 </RelativeLayout>

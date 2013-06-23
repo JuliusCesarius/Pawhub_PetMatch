@@ -1,8 +1,15 @@
 package com.blastic.pawhub_petmatch;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.view.Menu;
+import android.widget.TableRow;
+
+import com.blastic.utilities.Images;
 
 public class DetailsRate extends Activity {
 
@@ -10,6 +17,10 @@ public class DetailsRate extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_details_rate);
+		Bitmap bitmap = Images.GetBitmapClippedCircle(BitmapFactory.decodeResource(getResources(),R.drawable.greenbackground));
+		Drawable drawable = new BitmapDrawable(getResources(),Images.GetBitmapClippedCircle(bitmap));
+		TableRow tableRow = (TableRow)findViewById(R.id.valueRate);
+		tableRow.setBackground(drawable);
 	}
 
 	@Override
