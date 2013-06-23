@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -22,8 +23,12 @@ public class PetmatchActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_petmatch);
 		
-		ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        try{
+			ActionBar actionBar = getActionBar();
+	        actionBar.setDisplayHomeAsUpEnabled(true);
+        }catch(Exception ex){
+        	Log.e("version", ex.getMessage());
+        }
 		
 		Images.cropImage(R.drawable.pettorate, R.id.imgPetToRate, this);
 		Images.cropImage(R.drawable.petask, R.id.imgAskPet, this);

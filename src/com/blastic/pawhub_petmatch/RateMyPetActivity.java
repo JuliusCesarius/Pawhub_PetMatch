@@ -5,6 +5,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
@@ -29,8 +30,12 @@ public class RateMyPetActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_rate_my_pet);
 		
-		ActionBar actionBar = getActionBar();
-	    actionBar.setDisplayHomeAsUpEnabled(true);
+        try{
+			ActionBar actionBar = getActionBar();
+	        actionBar.setDisplayHomeAsUpEnabled(true);
+        }catch(Exception ex){
+        	Log.e("version", ex.getMessage());
+        }
 	      
 		/**se obtienen resources para las tabs
 		Resources res = getResources();

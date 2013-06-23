@@ -1,9 +1,10 @@
 package com.blastic.pawhub_petmatch;
 
-import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -16,7 +17,7 @@ public class MainActivity extends Activity {
 	ImageButton btnRate;
 	ImageButton btnMatch;
 
-    @SuppressLint("NewApi")
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,8 +25,12 @@ public class MainActivity extends Activity {
         
         btnRate = (ImageButton) findViewById(R.id.btnRateAPet);
         btnMatch = (ImageButton) findViewById(R.id.btnPetMatch);
-        ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        try{
+			ActionBar actionBar = getActionBar();
+	        actionBar.setDisplayHomeAsUpEnabled(true);
+        }catch(Exception ex){
+        	Log.e("version", ex.getMessage());
+        }
     }
 
 

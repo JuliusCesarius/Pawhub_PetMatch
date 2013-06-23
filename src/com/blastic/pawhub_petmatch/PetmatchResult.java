@@ -5,6 +5,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 
 import com.blastic.utilities.Images;
@@ -16,10 +17,14 @@ public class PetmatchResult extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_petmatch_result);
-		
-		ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-		
+        
+		try{
+			ActionBar actionBar = getActionBar();
+	        actionBar.setDisplayHomeAsUpEnabled(true);
+        }catch(Exception ex){
+        	Log.e("version", ex.getMessage());
+        }
+        
 		Images.cropImage(R.drawable.bigcirclepet, R.id.imgPet, this);
 		Images.cropImage(R.drawable.cocker, R.id.imgCorner, this);
 		
