@@ -1,11 +1,13 @@
 package com.blastic.pawhub_petmatch;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginActivity extends Activity {
 	
@@ -28,7 +30,20 @@ public boolean onCreateOptionsMenu(Menu menu) {
 }
 
 public void onBtnPHLogin_Click(View v){ 
-	//Intent i = new Intent(this,MatchSettingsActivity.class);
+	
+	TextView user = (TextView) findViewById(R.id.txtUser);
+	TextView password = (TextView) findViewById(R.id.txtPassword);
+	
+	if(user.getText().toString().equals("")){
+		Toast.makeText(getApplicationContext(), "Enter a username", Toast.LENGTH_SHORT).show();
+		return;
+		}
+	else if(password.getText().toString().equals("")){
+		Toast.makeText(getApplicationContext(), "Enter Password", Toast.LENGTH_SHORT).show();
+		return;
+	}
+	
+	
 	Intent loginPHIntent = new Intent(this,MainActivity.class);
 	startActivity(loginPHIntent);
 }

@@ -24,24 +24,24 @@ public class GlobalRatesActivity extends Activity {
 
 		//se obtienen resources para las tabs
 				Resources res = getResources();
-				/** Obteniendo una referencia al control principal TabHost y preparándolo para su 
-				 * configuración llamando a su método setup
+				/** Obteniendo una referencia al control principal TabHost y preparï¿½ndolo para su 
+				 * configuraciï¿½n llamando a su mï¿½todo setup
 				 */
 				TabHost tabs=(TabHost)findViewById(android.R.id.tabhost);
 				tabs.setup(); 
-				/**Creamos un objeto de tipo TabSpec para cada una de las pestañas que queramos 
-				 * añadir mediante el método newTabSpec, le pasamos como parámetro una etiqueta 
+				/**Creamos un objeto de tipo TabSpec para cada una de las pestaï¿½as que queramos 
+				 * aï¿½adir mediante el mï¿½todo newTabSpec, le pasamos como parï¿½metro una etiqueta 
 				 * identificativa "tabRatePet" para tab1 
 				 * 
 				 */
 				TabHost.TabSpec spec=tabs.newTabSpec("tabRatePet");
 				
-				// Asignamos el layout de contenido correspondiente a la pestaña llamando al método setContent
+				// Asignamos el layout de contenido correspondiente a la pestaï¿½a llamando al mï¿½todo setContent
 				spec.setContent(R.id.tabRatePet);
 				
-				/**Indicamos el texto y el icono que queremos mostrar en la pestaña mediante el método setIndicator
+				/**Indicamos el texto y el icono que queremos mostrar en la pestaï¿½a mediante el mï¿½todo setIndicator
 				 * el comportamiento difiere entre las distintas versiones de Android. En Android 4, el comportamiento 
-				 * por defecto del control TabHost es mostrar sólo el texto, o solo el icono, pero no ambos.
+				 * por defecto del control TabHost es mostrar sï¿½lo el texto, o solo el icono, pero no ambos.
 				 */
 				spec.setIndicator("RATE A PET",
 				res.getDrawable(android.R.drawable.ic_btn_speak_now)); //CAMBIAR ICONO

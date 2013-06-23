@@ -17,10 +17,7 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
     
-    <style name="noActionBar" parent="AppBaseTheme">
-    	<item name="android:windowActionBar">false</item>
-    	<item name="android:windowNoTitle">true</item>
-    </style>
+
     
     <style name="CustomRatingBar" parent="@android:style/Widget.RatingBar">
 		<item name="android:progressDrawable">@drawable/custom_ratingbar</item>
