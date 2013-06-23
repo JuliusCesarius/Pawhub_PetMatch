@@ -1,6 +1,9 @@
 package com.blastic.pawhub_petmatch;
 
+import android.annotation.TargetApi;
+import android.app.ActionBar;
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -19,11 +22,16 @@ public class RateMyPetActivity extends Activity {
 	
 	String[] mascotasMyRatesNames = {"Rocko", "Pucky", "Mr Rodo", "Hanibbal", "Piwy", "Mojito", "Coco", "Oreo"};
 
+	
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_rate_my_pet);
 		
+		ActionBar actionBar = getActionBar();
+	    actionBar.setDisplayHomeAsUpEnabled(true);
+	      
 		/**se obtienen resources para las tabs
 		Resources res = getResources();
 		 Obteniendo una referencia al control principal TabHost y preparándolo para su 
