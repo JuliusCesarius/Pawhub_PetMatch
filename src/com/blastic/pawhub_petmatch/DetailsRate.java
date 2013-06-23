@@ -19,13 +19,13 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TableRow;
 
 import com.blastic.adapters.JsonAdapter;
-import com.blastic.adapters.TableLayoutTop20Adapter;
 import com.blastic.clases.GenericAsyncTask;
 import com.blastic.clases.PetBasic;
 import com.blastic.clases.TopCategory;
@@ -34,7 +34,6 @@ import com.blastic.utilities.Images;
 public class DetailsRate extends Activity {
 	
 	View detailsView;
-
 	GenericAsyncTask<PetBasic> getPetBasicAsyncTask;
 
 	@Override
@@ -44,7 +43,10 @@ public class DetailsRate extends Activity {
 		
 		// llama el valor pasado por Globalrates
 		Intent mIntent = getIntent();
-		String idValue = mIntent.getDataString();
+		String value = mIntent.getStringExtra("variableName");
+		Integer intValue = mIntent.getIntExtra("intval", 0);
+		Log.i("valor", ""+value);
+		Log.i("valor", ""+intValue);
 		
 		Bitmap bitmap = Images.GetBitmapClippedCircle(BitmapFactory
 				.decodeResource(getResources(), R.drawable.greenbackground));
@@ -53,7 +55,7 @@ public class DetailsRate extends Activity {
 		TableRow tableRow = (TableRow) findViewById(R.id.valueRate);
 		//tableRow.setBackground(drawable);
 		
-		String urlString = "http://wskrs.com/PetRateService/RateAPet/f425c063-4db3-fcd2-2086-0063abc73c9e";
+		String urlString = "http://wskrs.com/PetRateService/GetPetRate/"+value+"?CategoryId="+intValue;
 		getPetBasicAsyncTask = new GetPetBasicAsyncTask(PetBasic.class);
 		getPetBasicAsyncTask.execute(urlString);
 		
@@ -72,7 +74,7 @@ public class DetailsRate extends Activity {
 			super(tipo);
 			// TODO Auto-generated constructor stub
 		}
-
+		
 		@Override
 		protected ArrayList<PetBasic> doInBackground(String... params) {
 			int count = params.length;
@@ -84,8 +86,8 @@ public class DetailsRate extends Activity {
 					URLConnection urlc = url.openConnection();
 					BufferedReader bfr = new BufferedReader(
 							new InputStreamReader(urlc.getInputStream()));
-					String line;
-					while ((line = bfr.readLine()) != null) {
+					String line = bfr.readLine();
+					while (line != null) {
 						JSONArray jsa = new JSONArray(line);
 						// ArrayAdapter<String> arrayAdapter = new
 						for (int i = 0; i < jsa.length(); i++) {
@@ -111,12 +113,12 @@ public class DetailsRate extends Activity {
 			return objects;
 		}
 
+
 		@Override
 		protected void onPostExecute(ArrayList<PetBasic> elements) {
 
 			detailsView = findViewById(R.layout.activity_details_rate);
-			
-			
+			Log.i("num", ""+elements.size());
 
 		}
 

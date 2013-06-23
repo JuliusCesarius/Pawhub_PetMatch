@@ -128,7 +128,6 @@ public final class R {
         public static final int lblUserPets=0x7f090026;
         public static final int listGlobalRates=0x7f09002f;
         public static final int listMyRates=0x7f09003e;
-        public static final int listTableTop20=0x7f090062;
         public static final int loginFbButton=0x7f090038;
         public static final int loginPawHubButton=0x7f090036;
         public static final int logoImage=0x7f090030;
@@ -162,6 +161,7 @@ public final class R {
         public static final int tabMyRates=0x7f09002e;
         public static final int tableLayoutOwner=0x7f090004;
         public static final int text=0x7f09006a;
+        public static final int top20table=0x7f090062;
         public static final int txtLastName=0x7f090021;
         public static final int txtName=0x7f090020;
         public static final int txtNamePet=0x7f090005;
