@@ -55,7 +55,18 @@ public class DetailsRate extends Activity {
 		TableRow tableRow = (TableRow) findViewById(R.id.valueRate);
 		//tableRow.setBackground(drawable);
 		
-		String urlString = "http://wskrs.com/PetRateService/GetPetRate/"+value+"?CategoryId="+intValue;
+		/*
+		 * Jalé las mismas mascotas en global, my rates y en top20Category, si se jala el id de la actividad
+		 * pasada no hay información al menos q el idPet y la cat coincidan:
+		 * 
+		 * String urlString = "http://wskrs.com/PetRateService/GetPetRate/"+value+"?CategoryId="+intValue;
+		 * 
+		 * anyway no jala nada de info cuando le das una existente, el error es org.json.JSONException: Value {"Name":"Cary8",
+		 * "RateName":"Hardness","Votes":4352,"Rating":0.08177678803064713,"RateCategoryId":2,"PetId":"91a80e39-fa3e-b7f9-46fb-8ab7c365c3f1",
+		 * "UserId":"4ff82aa6-d720-5fc2-ab10-19ce8dd2f7bb","OwnerName":"Tim62"} of type org.json.JSONObject cannot be converted to JSONArray,
+		 * no sé si sea porque las que si jalan info tienen [{" antes y éstas no jajajaja
+		 */
+		String urlString = "http://wskrs.com/PetRateService/GetPetRate/91a80e39-fa3e-b7f9-46fb-8ab7c365c3f1?CategoryId=2";
 		getPetBasicAsyncTask = new GetPetBasicAsyncTask(PetBasic.class);
 		getPetBasicAsyncTask.execute(urlString);
 		
