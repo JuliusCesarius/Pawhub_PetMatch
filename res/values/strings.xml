@@ -104,6 +104,12 @@
     <string name="tabRateAPet">Rate a pet</string>
     <string name="tabViewMyRates">View my Rates</string>
     <string name="tabGLobalRates">Global Rates</string>
-    <string name="title_activity_my_rates">MyRatesActivity</string>
+    <string name="title_activity_details_rate">DetailsRate</string>
+    
+    <!-- Strings para DetailsRate Activity -->
+    <string name="txtNamePet">Rocko</string>
+    <string name="txtOwner">Owner Israeliux</string>
+    <string name="txtOwnerName">Israeliux</string>
+    <string name="subtitleDetailsRate">Top 20 Most Lovely</string>
 
 </resources>
