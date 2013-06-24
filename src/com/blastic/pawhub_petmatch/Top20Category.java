@@ -16,12 +16,22 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.View.OnTouchListener;
+import android.webkit.WebView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TableRow.LayoutParams;
 import android.widget.TextView;
 
 import com.blastic.adapters.JsonAdapter;
-import com.blastic.adapters.TableLayoutTop20Adapter;
 import com.blastic.clases.GenericAsyncTask;
 import com.blastic.clases.TopCategory;
 
@@ -29,6 +39,7 @@ public class Top20Category extends Activity {
 
 	ListView listTop20;
 	TextView titulo;
+	int intValue;
 
 	GenericAsyncTask<TopCategory> getTopCategoryAsyncTask;
 
@@ -38,7 +49,7 @@ public class Top20Category extends Activity {
 		setContentView(R.layout.activity_top20_category);
 		// llama el valor pasado por Globalrates
 		Intent mIntent = getIntent();
-		int intValue = mIntent.getIntExtra("intVariableName", 0);
+		intValue = mIntent.getIntExtra("intVariableName", 0);
 
 		String urlString = "http://wskrs.com/PetRateService/GetTopCategories";
 		getTopCategoryAsyncTask = new GetTopCategoryAsyncTask(TopCategory.class);
@@ -112,12 +123,87 @@ public class Top20Category extends Activity {
 
 		@Override
 		protected void onPostExecute(ArrayList<TopCategory> elements) {
+			
+			TableLayout table =  (TableLayout) findViewById(R.id.top20table);
+			
+			int mRows = 3;
+			int mCols = 2;
+			int count = 0;
+			
+		    for (int i = 0; i < mRows; i++) {
 
-			listTop20 = (ListView) findViewById(R.id.listTableTop20);
-			TableLayoutTop20Adapter catAdapter = new TableLayoutTop20Adapter(Top20Category.this, R.layout.tablerow_layout, elements.toArray(new TopCategory[elements.size()]));
-			catAdapter.setDropDownViewResource(R.layout.tablerow_layout);
-			listTop20.setAdapter(catAdapter);
-			Log.i("nums", "" + elements.size());
+		    	// Create a TableRow and give it an ID
+	            TableRow tr = new TableRow(Top20Category.this);
+	            tr.setId(100+i);
+	            tr.setLayoutParams(new LayoutParams());
+	            for (int j = 0; j < mCols; j++) {
+		            
+		            if(count < elements.size()){
+		            //Log.i(""+count,""+elements.get(count).getPetName());
+		            
+		            TopCategory element = elements.get(count);
+		            LayoutInflater inflater = (LayoutInflater)  Top20Category.this.getSystemService(LAYOUT_INFLATER_SERVICE);
+		            View childLayout = inflater.inflate(R.layout.tablerow_layout, (ViewGroup) findViewById(R.layout.tablerow_layout));
+		            
+		    		TextView lblPetNameRates = (TextView) childLayout.findViewById(R.id.lblPetNameRates);
+		    		TextView lblPetVotes = (TextView) childLayout.findViewById(R.id.lblPetVotes);
+		    		TextView lblPetId = (TextView) childLayout.findViewById(R.id.lblPetId);
+		    		WebView lblPetRatesPicture = (WebView) childLayout.findViewById(R.id.lblPetRatesPicture);
+		    		
+		    		if (lblPetNameRates != null && null != element.getPetName()
+		    				&& element.getPetName().trim().length() > 0)
+		    			lblPetNameRates.setText(element.getPetName());
+
+		    		String rates = "" + element.getRates() + " Votes";
+
+		    		if (lblPetVotes != null && null != rates)
+		    			lblPetVotes.setText(rates);
+
+		    		if (lblPetRatesPicture != null && null != element.getPicture()
+		    				&& element.getPicture().trim().length() > 0) {
+		    			String url = element.getPicture();
+		    			StringBuilder builder = new StringBuilder();
+
+		    			builder.append("<html><body>");
+		    			builder.append("<img style='width: 80px; height: 80px; margin: -8px auto auto -8px;' src='"
+		    					+ url + "' />");
+		    			builder.append("</body></html>");
+
+		    			lblPetRatesPicture.loadData(builder.toString(), "text/html",
+		    					"UTF-8");
+		    		}
+		    		final String id = element.getPetid();
+		    		if (lblPetId != null && null != id) {
+		    			lblPetId.setText(element.getPetid());
+		    			
+		    			lblPetRatesPicture.setOnTouchListener(new OnTouchListener() { 
+
+		    				@Override
+		    				public boolean onTouch(View arg0, MotionEvent arg1) {
+		    					
+		    					Intent intent=new Intent(Top20Category.this, DetailsRate.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		    					intent.putExtra("variableName", id);
+		    					intent.putExtra("intval", intValue);
+		    					Top20Category.this.startActivity(intent);
+		    					
+		    					
+		    					return true;
+		    				}
+		    				
+		    			});
+		    			 
+		    		}
+		            
+		            tr.addView(childLayout);
+		            
+		            	count++;
+		            }
+		            
+	            }
+
+
+		        table.addView(tr);
+		    }
 
 		}
 

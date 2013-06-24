@@ -24,8 +24,6 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.blastic.utilities.ActionBarHandler;
-
 
 @SuppressLint("SimpleDateFormat")
 public class EditUserActivity extends FragmentActivity {
@@ -41,8 +39,6 @@ public class EditUserActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_user);
-		
-		ActionBarHandler.setActionBar(this);
 
 		pickPhoto = (ImageView) findViewById(R.id.userPickPicture);
 		takePhoto = (ImageView) findViewById(R.id.userTakePicture);
@@ -57,13 +53,13 @@ public class EditUserActivity extends FragmentActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.edit_user, menu);
 		return true;
 	}
 
 	public void onBtnFinish_Click(View v) {
 
-		Intent ratePetIntend = new Intent(this, GlobalRatesActivity.class);
+		Intent ratePetIntend = new Intent(this, MainTabsActivity.class);
 		startActivity(ratePetIntend);
 	}
 	
@@ -101,8 +97,8 @@ public class EditUserActivity extends FragmentActivity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		Log.i("prueba", "result");
 		/**
-		 * Se revisa si la imagen viene de la cï¿½mara (TAKE_PICTURE) o de la
-		 * galerï¿½a (SELECT_PICTURE)
+		 * Se revisa si la imagen viene de la c‡mara (TAKE_PICTURE) o de la
+		 * galer’a (SELECT_PICTURE)
 		 */
 		if (requestCode == TAKE_PICTURE) {
 			/**
@@ -111,7 +107,7 @@ public class EditUserActivity extends FragmentActivity {
 			 */
 			if (data != null) {
 				/**
-				 * En el caso de una vista previa, obtenemos el extra ï¿½dataï¿½ del
+				 * En el caso de una vista previa, obtenemos el extra ÒdataÓ del
 				 * intent y lo mostramos en el ImageView
 				 */
 				if (data.hasExtra("data")) {
@@ -119,8 +115,8 @@ public class EditUserActivity extends FragmentActivity {
 							.getParcelableExtra("data"));
 					pickPhoto.setVisibility(View.INVISIBLE);
 					/**
-					 * Para guardar la imagen en la galerï¿½a, utilizamos una
-					 * conexiï¿½n a un MediaScanner
+					 * Para guardar la imagen en la galer’a, utilizamos una
+					 * conexi—n a un MediaScanner
 					 */
 					new MediaScannerConnectionClient() {
 						private MediaScannerConnection msc = null;

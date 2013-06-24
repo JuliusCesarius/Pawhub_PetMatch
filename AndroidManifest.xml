@@ -72,9 +72,6 @@
         <activity
             android:name="com.blastic.pawhub_petmatch.MainTabsActivity"
             android:label="@string/title_activity_petmatch_result" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.blastic.pawhub_petmatch.DetailsRate"
