@@ -1,14 +1,14 @@
 package com.blastic.pawhub_petmatch;
 
 import android.annotation.TargetApi;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
+
+import com.blastic.utilities.ActionBarHandler;
 
 
 
@@ -30,24 +30,17 @@ public class RateMyPetActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_rate_my_pet);
 		
-        try{
-        	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
-				ActionBar actionBar = getActionBar();
-		        actionBar.setDisplayHomeAsUpEnabled(true);
-        	 }
-        }catch(Exception ex){
-        	Log.e("version", ex.getMessage());
-        }
+		ActionBarHandler.setActionBar(this);
 	      
 		/**se obtienen resources para las tabs
 		Resources res = getResources();
-		 Obteniendo una referencia al control principal TabHost y preparándolo para su 
-		 * configuración llamando a su método setup
+		 Obteniendo una referencia al control principal TabHost y preparï¿½ndolo para su 
+		 * configuraciï¿½n llamando a su mï¿½todo setup
 		 
 		TabHost tabs=(TabHost)findViewById(android.R.id.tabhost);
 		tabs.setup(); 
-		/**Creamos un objeto de tipo TabSpec para cada una de las pestañas que queramos 
-		 * añadir mediante el método newTabSpec, le pasamos como parámetro una etiqueta 
+		/**Creamos un objeto de tipo TabSpec para cada una de las pestaï¿½as que queramos 
+		 * aï¿½adir mediante el mï¿½todo newTabSpec, le pasamos como parï¿½metro una etiqueta 
 		 * identificativa "tabRatePet" para tab1 
 		 * 
 		 
@@ -55,9 +48,9 @@ public class RateMyPetActivity extends Activity {
 		
 
 		
-		/**Indicamos el texto y el icono que queremos mostrar en la pestaña mediante el método setIndicator
+		/**Indicamos el texto y el icono que queremos mostrar en la pestaï¿½a mediante el mï¿½todo setIndicator
 		 * el comportamiento difiere entre las distintas versiones de Android. En Android 4, el comportamiento 
-		 * por defecto del control TabHost es mostrar sólo el texto, o solo el icono, pero no ambos.
+		 * por defecto del control TabHost es mostrar sï¿½lo el texto, o solo el icono, pero no ambos.
 		 
 		spec.setIndicator("RATE A PET",
 		res.getDrawable(android.R.drawable.ic_btn_speak_now)); //CAMBIAR ICONO
@@ -99,7 +92,7 @@ public class RateMyPetActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.rate_my_pet, menu);
+		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 

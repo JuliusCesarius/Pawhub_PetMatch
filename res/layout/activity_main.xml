@@ -3,6 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
+    android:fillViewport="true"
      >
 
     <RelativeLayout
@@ -12,23 +13,23 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
+        android:background="#464547"
         tools:context=".MainActivity" >
 
-        <ImageView
-            android:id="@+id/logoMain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="21dp"
-            android:contentDescription="@string/lblLogo"
-            android:src="@drawable/logo_main" />
+<!--         <ImageView -->
+<!--             android:id="@+id/logoMain" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_alignParentTop="true" -->
+<!--             android:layout_centerHorizontal="true" -->
+<!--             android:layout_marginTop="21dp" -->
+<!--             android:contentDescription="@string/lblLogo" -->
+<!--             android:src="@drawable/logo_main" /> -->
 
         <ImageButton
             android:id="@+id/btnRateAPet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/logoMain"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:contentDescription="@string/lblRatePet"

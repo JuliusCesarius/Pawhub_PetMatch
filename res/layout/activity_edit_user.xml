@@ -2,11 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     >
     
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/gradient"
         android:scrollbars="vertical"
         tools:context=".EditPetActivity" >
@@ -288,18 +289,29 @@
           </LinearLayout>
           
           </LinearLayout>
+          
+      <LinearLayout 
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"	
+          android:weightSum="10"
+          android:layout_below="@+id/LinearLayout8"
+          android:gravity="center"
+          android:layout_marginTop="10dp"
+          android:layout_marginBottom="10dp"
+          >
          
-     <ImageButton
-            android:id="@+id/btnEditAPet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/LinearLayout8"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:contentDescription="@string/lblFinish"
-            android:onClick="onBtnFinish_Click"
-            android:src="@drawable/btnfinish" />
-
+	     <Button
+	            android:id="@+id/btnEditAPet"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center"
+	            android:onClick="onBtnFinish_Click"
+	            android:background="@drawable/gradient_purple" 
+	            android:layout_weight="6"
+	            android:text="@string/lblFinish"
+	            android:textColor="#FFFFFF"/>
+	     
+		</LinearLayout>
 
 </RelativeLayout> 
     

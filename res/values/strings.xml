@@ -8,6 +8,12 @@
     <string name="hello_world">Hello world!</string>
     <string name="editUser">Edit User</string>
     <string name="logout">Log out</string>
+    <string name="about">About</string>
+    <string name="profile">Profile</string>
+    <string name="my_pets">My Pets</string>
+    
+<!--     Strings para SplashScreen Activity -->
+
 
     <!-- Strings para Login Activity -->
 
@@ -18,7 +24,7 @@
     <string name="loginPawhubDescription">Login with Pawhub account</string>
     <string name="loginFbDescription">Login with Facebook account</string>
     <string name="forgotPasswordLink"><u><a href="www.google.com">I forgot my password</a></u></string>
-    <string name="accountLink"><a href="www.google.com">I haven\'t an account</a></string>
+    <string name="accountLink"><a href="www.google.com">New here?</a></string>
     <string name="title_activity_petmatch">Preferences for Match</string>
 
     <!-- Strings para PetMatch Activity -->
@@ -105,11 +111,12 @@
     <string name="tabViewMyRates">View my Rates</string>
     <string name="tabGLobalRates">Global Rates</string>
     <string name="title_activity_details_rate">DetailsRate</string>
-    
+
     <!-- Strings para DetailsRate Activity -->
     <string name="txtNamePet">Rocko</string>
     <string name="txtOwner">Owner Israeliux</string>
     <string name="txtOwnerName">Israeliux</string>
     <string name="subtitleDetailsRate">Top 20 Most Lovely</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
 
 </resources>

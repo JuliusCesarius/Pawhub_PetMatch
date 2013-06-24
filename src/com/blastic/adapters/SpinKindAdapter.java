@@ -1,7 +1,5 @@
 package com.blastic.adapters;
 
-import com.blastic.clases.Kind;
-
 import android.content.Context;
 import android.graphics.Color;
 import android.util.Log;
@@ -9,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.blastic.clases.Kind;
 
 public class SpinKindAdapter extends ArrayAdapter<Kind>{
 

@@ -7,7 +7,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
- 
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,11 +18,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.widget.ListView;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.blastic.adapters.JsonAdapter;
-import com.blastic.adapters.ListViewTopCategoryAdapter;
 import com.blastic.adapters.TableLayoutTop20Adapter;
 import com.blastic.clases.GenericAsyncTask;
 import com.blastic.clases.TopCategory;

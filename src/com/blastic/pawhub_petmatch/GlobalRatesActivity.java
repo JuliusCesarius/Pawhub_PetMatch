@@ -25,6 +25,7 @@ import com.blastic.adapters.ListViewMyRatesAdapter;
 import com.blastic.adapters.ListViewTopCategoryAdapter;
 import com.blastic.clases.GenericAsyncTask;
 import com.blastic.clases.TopCategory;
+import com.blastic.utilities.ActionBarHandler;
 
 
 public class GlobalRatesActivity extends Activity {
@@ -39,6 +40,8 @@ public class GlobalRatesActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_global_rates);
+		
+		ActionBarHandler.setActionBar(this);
 		
 		String urlString = "http://wskrs.com/PetRateService/GetTopCategories";
 		getTopCategoryAsyncTask = new GetTopCategoryAsyncTask(TopCategory.class);

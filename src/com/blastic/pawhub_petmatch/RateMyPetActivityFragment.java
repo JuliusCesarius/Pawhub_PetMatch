@@ -15,7 +15,7 @@ public class RateMyPetActivityFragment extends Fragment {
         Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View V = inflater.inflate(R.layout.activity_rate_my_pet, container, false);
-
         return V;
+        
     }
 }

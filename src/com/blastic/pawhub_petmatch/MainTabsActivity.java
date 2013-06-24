@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 
+import com.blastic.utilities.ActionBarHandler;
+
 public class MainTabsActivity extends FragmentActivity {
 
 	private FragmentTabHost mTabHost;
@@ -21,5 +23,9 @@ public class MainTabsActivity extends FragmentActivity {
 	    		RateMyPetActivityFragment.class, null);
 	    mTabHost.addTab(mTabHost.newTabSpec("tab3").setIndicator("Global Rates"),
 	    		RateMyPetActivityFragment.class, null);
+	    
+	    mTabHost.setCurrentTab(0);
+	    
+	    ActionBarHandler.setActionBar(this);
 	}
 }

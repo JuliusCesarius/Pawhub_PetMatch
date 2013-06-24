@@ -148,8 +148,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="6"
-                android:background="#84c33e"
-                android:text="@string/btnRatePet" />
+                android:background="@drawable/gradient_purple"
+                android:text="@string/btnRatePet"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
     </RelativeLayout>
 

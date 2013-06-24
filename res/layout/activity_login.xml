@@ -8,44 +8,62 @@
 	<RelativeLayout
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-	    android:paddingTop="@dimen/activity_vertical_margin"
 	    tools:context=".LoginActivity" 
-	    android:background="@drawable/gradient">
+	    android:background="#464547">
 	
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="105dp"
+	        android:background="@drawable/gradient_purple"
+	        
+	        >
+	        
+	        
+	        
+	    </LinearLayout>
 	
+	    
+	    
 	    <ImageView
 	        android:id="@+id/logoImage"
 	        android:contentDescription="@string/logoDescription"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:src="@drawable/logopawhub"
+	        android:src="@drawable/login_logo"
 	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="25dp"
+	        android:layout_marginBottom="25dp"
 	      />
 	     
 	    <LinearLayout
 	        android:id="@+id/userEditLayout"
-	        android:layout_width="fill_parent"
+	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/logoImage"
 	        android:gravity="center"
 	        android:weightSum="10"
+	        android:layout_marginBottom="30dp"
 	        >
 	     
-			<EditText
-			android:id="@+id/txtUser"
-			android:inputType="text"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:hint="@string/userEditText"
-			android:layout_weight="6"
-			/>
+				<EditText
+					android:id="@+id/txtUser"
+					android:inputType="text"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:hint="@string/userEditText"
+					android:layout_weight="6"
+					android:background="#FFFFFF"
+					android:textAlignment="center"
+					
+				/>
 	    
 	    </LinearLayout>
 	    
 	    
 	    <LinearLayout
 	        android:id="@+id/passwordEditLayout"
-	        android:layout_width="fill_parent"
+	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/userEditLayout"
 	        android:gravity="center"
@@ -59,6 +77,7 @@
 				android:layout_height="wrap_content"
 				android:hint="@string/passwordEditText"
 				android:layout_weight="6"
+				android:background="#FFFFFF"
 			/>
 	    
 	    </LinearLayout>
@@ -70,7 +89,7 @@
 		android:layout_below="@+id/passwordEditLayout"
 		android:gravity="center"
 		android:paddingBottom="20dp"
-		android:paddingTop="50dp"
+		android:paddingTop="30dp"
 		>
 	
 			<ImageButton
@@ -109,7 +128,7 @@
 		android:layout_height="wrap_content"
 		android:layout_alignParentBottom="true"
 		android:layout_below="@+id/buttonFB"
-		android:background="#7D7979"
+		android:background="#464547"
 		android:gravity="center" >
 	    
 			<LinearLayout
@@ -124,8 +143,8 @@
 				android:text="@string/forgotPasswordLink"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:textColorLink="#ffffff"
-				android:textColor="#ffffff"
+				android:textColorLink="#4abccc"
+				android:textColor="#4abccc"
 				/>
 				
 		     </LinearLayout>
@@ -141,8 +160,8 @@
 				android:text="@string/accountLink"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:textColorLink="#ffffff"
-				android:textColor="#ffffff"
+				android:textColorLink="#ffd400"
+				android:textColor="#ffd400"
 				/>
 			</LinearLayout>	
     	</RelativeLayout>
