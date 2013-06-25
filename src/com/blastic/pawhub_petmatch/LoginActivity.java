@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +17,7 @@ public class LoginActivity extends Activity {
 	private final String ENTER_USERNAME="Enter a username";
 	private final String ENTER_PASSWORD="Enter password";
 	
-	ImageButton btnLogin;
+	Button btnLogin;
 	
 
 	@Override 
@@ -25,7 +25,9 @@ public class LoginActivity extends Activity {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_login);
 	ActionBarHandler.hide(this);
-	btnLogin = (ImageButton) findViewById(R.id.loginPawHubButton);
+	btnLogin = (Button) findViewById(R.id.loginPawHubButton);
+	
+	
 }
 
 	@Override

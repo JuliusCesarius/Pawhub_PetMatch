@@ -21,8 +21,8 @@
     <string name="logoDescription">PawHub</string>
     <string name="userEditText">User</string>
     <string name="passwordEditText">Password</string>
-    <string name="loginPawhubDescription">Login with Pawhub account</string>
-    <string name="loginFbDescription">Login with Facebook account</string>
+    <string name="loginPawhubDescription">Login with Pawhub</string>
+    <string name="loginFbDescription">Login with Facebook</string>
     <string name="forgotPasswordLink"><u><a href="www.google.com">I forgot my password</a></u></string>
     <string name="accountLink"><a href="www.google.com">New here?</a></string>
     <string name="title_activity_petmatch">Preferences for Match</string>

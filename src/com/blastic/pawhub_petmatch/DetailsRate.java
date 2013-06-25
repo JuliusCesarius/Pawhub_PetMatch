@@ -12,23 +12,21 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.TableRow;
 
 import com.blastic.adapters.JsonAdapter;
 import com.blastic.clases.GenericAsyncTask;
 import com.blastic.clases.PetBasic;
-import com.blastic.clases.TopCategory;
+import com.blastic.utilities.ActionBarHandler;
 import com.blastic.utilities.Images;
 
 public class DetailsRate extends Activity {
@@ -48,23 +46,23 @@ public class DetailsRate extends Activity {
 		Log.i("valor", ""+value);
 		Log.i("valor", ""+intValue);
 		
-		Bitmap bitmap = Images.GetBitmapClippedCircle(BitmapFactory
-				.decodeResource(getResources(), R.drawable.greenbackground));
-		Drawable drawable = new BitmapDrawable(getResources(),
-				Images.GetBitmapClippedCircle(bitmap));
+		Images.cropImageCorner(R.drawable.big_rocko, R.id.imgPetDetails, this);
+		findViewById(R.id.tableLayoutOwner).getBackground().setColorFilter(Color.rgb(255, 255, 255), PorterDuff.Mode.SRC_ATOP);
+		ActionBarHandler.setActionBar(this);
+		
 		TableRow tableRow = (TableRow) findViewById(R.id.valueRate);
 		//tableRow.setBackground(drawable);
 		
 		/*
-		 * Jalé las mismas mascotas en global, my rates y en top20Category, si se jala el id de la actividad
-		 * pasada no hay información al menos q el idPet y la cat coincidan:
+		 * Jalï¿½ las mismas mascotas en global, my rates y en top20Category, si se jala el id de la actividad
+		 * pasada no hay informaciï¿½n al menos q el idPet y la cat coincidan:
 		 * 
 		 * String urlString = "http://wskrs.com/PetRateService/GetPetRate/"+value+"?CategoryId="+intValue;
 		 * 
 		 * anyway no jala nada de info cuando le das una existente, el error es org.json.JSONException: Value {"Name":"Cary8",
 		 * "RateName":"Hardness","Votes":4352,"Rating":0.08177678803064713,"RateCategoryId":2,"PetId":"91a80e39-fa3e-b7f9-46fb-8ab7c365c3f1",
 		 * "UserId":"4ff82aa6-d720-5fc2-ab10-19ce8dd2f7bb","OwnerName":"Tim62"} of type org.json.JSONObject cannot be converted to JSONArray,
-		 * no sé si sea porque las que si jalan info tienen [{" antes y éstas no jajajaja
+		 * no sï¿½ si sea porque las que si jalan info tienen [{" antes y ï¿½stas no jajajaja
 		 */
 		String urlString = "http://wskrs.com/PetRateService/GetPetRate/91a80e39-fa3e-b7f9-46fb-8ab7c365c3f1?CategoryId=2";
 		getPetBasicAsyncTask = new GetPetBasicAsyncTask(PetBasic.class);
