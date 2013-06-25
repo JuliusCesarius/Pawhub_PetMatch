@@ -10,7 +10,7 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    tools:context=".PetmatchResult" 
-	    android:background="@drawable/gradient">
+	    android:background="@drawable/pet_collage_gray">
 
 	     <TextView 
 		     android:id="@+id/lblMatchPet"
@@ -47,10 +47,10 @@
 	
 			     <ImageView
 			         android:id="@+id/imgPetResult"
-			         android:layout_width="wrap_content"
-			         android:layout_height="wrap_content"
+			         android:layout_width="match_parent"
+			         android:layout_height="250dp"
 			         android:contentDescription="@string/contentDescriptionImgPet"
-			         android:scaleType="centerCrop"
+			         android:scaleType="fitXY"
 			         android:src="@drawable/big_rocko" />
    
 	         </LinearLayout> 
@@ -76,7 +76,8 @@
 		                 android:layout_width="wrap_content"
 		                 android:layout_height="wrap_content"
 		                 android:text="@string/petName"
-		                 android:textSize="30sp"
+		                 android:textSize="31sp"
+		                 android:textStyle="normal"
 		                 />
 		         </LinearLayout>
 		         
@@ -113,6 +114,7 @@
 			    		android:paddingTop="@dimen/activity_vertical_margin"
 			    		android:layout_marginLeft="@dimen/activity_horizontal_margin"
 			    		android:textColor="#FFFFFF"
+			    		android:textSize="22sp"
 			    		
 		                 />
 		             
@@ -183,8 +185,8 @@
 			             
 			             <ImageView
 			                 android:id="@+id/imgCorner"
-			                 android:layout_width="wrap_content"
-			                 android:layout_height="wrap_content"
+			                 android:layout_width="88dp"
+			                 android:layout_height="91dp"
 			                 android:src="@drawable/cocker"
 			                 android:contentDescription="@string/contentDescriptionImgPet"
 			                 />

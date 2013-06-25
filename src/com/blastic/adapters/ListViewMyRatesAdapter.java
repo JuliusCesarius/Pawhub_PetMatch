@@ -16,107 +16,109 @@ import com.blastic.pawhub_petmatch.R;
 
 public class ListViewMyRatesAdapter extends ArrayAdapter<TopCategory> {
 
-	private TopCategory[] values;
-	private TopCategory topCat;
-	// Your sent context
-	private Context context;
+private TopCategory[] values;
+private TopCategory topCat;
+// Your sent context
+private Context context;
 
-	// ImageLoader imageLoader;
+// ImageLoader imageLoader;
 
-	public ListViewMyRatesAdapter(Activity cont, int resource,
-			TopCategory[] values) {
-		super(cont, resource, values);
-		this.context = cont;
-		this.values = values;
-	}
+public ListViewMyRatesAdapter(Activity cont, int resource,
+TopCategory[] values) {
+super(cont, resource, values);
+this.context = cont;
+this.values = values;
+}
 
-	@Override
-	public int getCount() {
-		return values.length;
-	}
+@Override
+public int getCount() {
+return values.length;
+}
 
-	@Override
-	public TopCategory getItem(int position) {
-		return values[position];
-	}
+@Override
+public TopCategory getItem(int position) {
+return values[position];
+}
 
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
+@Override
+public long getItemId(int position) {
+return position;
+}
 
-	@Override
-	public View getView(final int position, View convertView, ViewGroup parent) {
+@Override
+public View getView(final int position, View convertView, ViewGroup parent) {
 
-		View view = convertView;
-		ViewHolder holder;
+View view = convertView;
+ViewHolder holder;
 
-		if (view == null) {
-			LayoutInflater inflater = (LayoutInflater) context
-					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+if (view == null) {
+LayoutInflater inflater = (LayoutInflater) context
+.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
  
-			view = inflater.inflate(R.layout.rowlayout, null);
-			
-			view.findViewById(R.id.rowlayoutContainer).getBackground().setColorFilter(Color.rgb(218, 219, 219), PorterDuff.Mode.SRC_ATOP);
+view = inflater.inflate(R.layout.rowlayout, null);
 
-			holder = new ViewHolder();
-			view.setTag(holder);
-		} else {
-			holder = (ViewHolder) view.getTag();
-		}
+view.findViewById(R.id.rowlayoutContainer).getBackground().setColorFilter(Color.rgb(218, 219, 219), PorterDuff.Mode.SRC_ATOP);
 
-		if ((values == null) || ((position + 1) > values.length))
-			return view;
+holder = new ViewHolder();
+view.setTag(holder);
+} else {
+holder = (ViewHolder) view.getTag();
+}
 
-		topCat = values[position];
+if ((values == null) || ((position + 1) > values.length))
+return view;
 
-		holder.lblCategory = (TextView) view.findViewById(R.id.lblCategory);
-		holder.lblPetNameRates = (TextView) view
-				.findViewById(R.id.lblPetNameRates);
-		holder.lblPetVotes = (TextView) view.findViewById(R.id.lblPetVotes);
-		holder.lblPetRatesPicture = (WebView) view
-				.findViewById(R.id.lblPetRatesPicture);
+topCat = values[position];
 
-		if (holder.lblCategory != null && null != topCat.getName()
-				&& topCat.getName().trim().length() > 0) {
-			holder.lblCategory.setText(topCat.getName());
-		}
+holder.lblCategory = (TextView) view.findViewById(R.id.lblCategory);
+holder.lblPetNameRates = (TextView) view
+.findViewById(R.id.lblPetNameRates);
+holder.lblPetVotes = (TextView) view.findViewById(R.id.lblPetVotes);
+holder.lblPetRatesPicture = (WebView) view
+.findViewById(R.id.lblPetRatesPicture);
 
-		if (holder.lblPetNameRates != null && null != topCat.getPetName()
-				&& topCat.getPetName().trim().length() > 0) {
-			holder.lblPetNameRates.setText(topCat.getPetName());
-		}
+if (holder.lblCategory != null && null != topCat.getName()
+&& topCat.getName().trim().length() > 0) {
+holder.lblCategory.setText(topCat.getName());
+}
 
-		String rates = "" + topCat.getRates() + " Votes";
+if (holder.lblPetNameRates != null && null != topCat.getPetName()
+&& topCat.getPetName().trim().length() > 0) {
+holder.lblPetNameRates.setText(topCat.getPetName());
+}
 
-		if (holder.lblPetVotes != null && null != rates) {
-			holder.lblPetVotes.setText(rates);
-		}
-		if (holder.lblPetRatesPicture != null && null != topCat.getPicture()
-				&& topCat.getPicture().trim().length() > 0) {
-			String url = topCat.getPicture();
+String rates = "" + topCat.getRates() + " Votes";
 
-			StringBuilder builder = new StringBuilder();
+if (holder.lblPetVotes != null && null != rates) {
+holder.lblPetVotes.setText(rates);
+}
+if (holder.lblPetRatesPicture != null && null != topCat.getPicture()
+&& topCat.getPicture().trim().length() > 0) {
+String url = topCat.getPicture();
 
-			builder.append("<html><body style='background: #DADBDB;'>");
-			builder.append("<img style='width: 74px; height: 74px; margin: -8px auto auto -8px; border-radius: 5px;' src='"
-					+ url + "' />");
-			builder.append("</body></html>");
+StringBuilder builder = new StringBuilder();
 
-			holder.lblPetRatesPicture.loadData(builder.toString(), "text/html",
-					"UTF-8");
-		}
-		
-		
+builder.append("<html><body style='background: #DADBDB;'>");
+builder.append("<img style='width: 74px; height: 74px; margin: -8px auto auto -8px; border-radius: 5px;' src='"
++ url + "' />");
+builder.append("</body></html>");
 
-		return view;
-	}
+holder.lblPetRatesPicture.loadData(builder.toString(), "text/html",
+"UTF-8");
+}
 
-	public class ViewHolder {
 
-		public TextView lblCategory, lblPetNameRates, lblPetVotes;
-		public WebView lblPetRatesPicture;
 
-	}
+return view;
+}
+
+public class ViewHolder {
+
+public TextView lblCategory, lblPetNameRates, lblPetVotes;
+public WebView lblPetRatesPicture;
 
 }
+
+}
+
+

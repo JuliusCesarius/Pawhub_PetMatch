@@ -9,18 +9,14 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    tools:context=".LoginActivity" 
-	    android:background="#464547">
+	    android:background="@drawable/pet_collage_gray">
 	
 	    
 	    <LinearLayout 
 	        android:layout_width="match_parent"
 	        android:layout_height="105dp"
-	        android:background="@drawable/gradient_purple"
-	        
-	        >
-	        
-	        
-	        
+	        android:background="@drawable/gradient_purple" >
+
 	    </LinearLayout>
 	
 	    
@@ -46,6 +42,7 @@
 	        android:layout_marginBottom="30dp"
 	        >
 	     
+	        
 				<EditText
 					android:id="@+id/txtUser"
 					android:inputType="text"
@@ -53,7 +50,7 @@
 					android:layout_height="wrap_content"
 					android:hint="@string/userEditText"
 					android:layout_weight="6"
-					android:background="#FFFFFF"
+					android:background="@drawable/border_edit_text"
 					android:textAlignment="center"
 					
 				/>
@@ -77,32 +74,54 @@
 				android:layout_height="wrap_content"
 				android:hint="@string/passwordEditText"
 				android:layout_weight="6"
-				android:background="#FFFFFF"
+				android:background="@drawable/border_edit_text"
+				
 			/>
 	    
 	    </LinearLayout>
 	    
 		<LinearLayout
 		android:id="@+id/buttonPH"
-		android:layout_width="fill_parent"
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_below="@+id/passwordEditLayout"
 		android:gravity="center"
 		android:paddingBottom="20dp"
 		android:paddingTop="30dp"
+		android:weightSum="10"
 		>
 	
-			<ImageButton
-			android:id="@+id/loginPawHubButton"
-			android:contentDescription="@string/loginPawhubDescription"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:src="@drawable/loginpawhub"
-			android:background="@null"
-			android:onClick="onBtnPHLogin_Click"
-			/>
+<!-- 			<ImageButton -->
+<!-- 			android:id="@+id/loginPawHubButton" -->
+<!-- 			android:contentDescription="@string/loginPawhubDescription" -->
+<!-- 			android:layout_width="wrap_content" -->
+<!-- 			android:layout_height="wrap_content" -->
+<!-- 			android:src="@drawable/loginpawhub" -->
+<!-- 			android:background="@null" -->
+<!-- 			android:onClick="onBtnPHLogin_Click" -->
+<!-- 			/> -->
+
+				<Button
+				    android:id="@+id/loginPawHubButton"
+				    android:layout_width="0dp"
+				    android:layout_height="wrap_content"
+				    android:drawableLeft="@drawable/icono_xs"
+				    android:text="@string/loginPawhubDescription"
+				    android:background="@drawable/gradient_purple"
+				    android:textColor="#FFFFFF"
+				    android:layout_weight="6" 
+				    android:paddingLeft="5dp"
+				    android:paddingRight="5dp"
+				    android:onClick="onBtnPHLogin_Click"
+				    />
 			
 	    </LinearLayout>
+	    
+		
+		
+	    
+		
+		
 	    
 		<LinearLayout
 		android:id="@+id/buttonFB"
@@ -111,16 +130,30 @@
 		android:layout_below="@+id/buttonPH"
 		android:paddingBottom="80dp"
 		android:gravity="center"
+		android:weightSum="10"
 		>
 	
-			<ImageButton
-			android:id="@+id/loginFbButton"
-			android:contentDescription="@string/loginFbDescription"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:src="@drawable/loginfb"
-			android:background="@null"
-			/>
+<!-- 			<ImageButton -->
+<!-- 			android:id="@+id/loginFbButton" -->
+<!-- 			android:contentDescription="@string/loginFbDescription" -->
+<!-- 			android:layout_width="wrap_content" -->
+<!-- 			android:layout_height="wrap_content" -->
+<!-- 			android:src="@drawable/loginfb" -->
+<!-- 			android:background="@null" -->
+<!-- 			/> -->
+			
+			<Button
+				    android:id="@+id/loginFbButton"
+				    android:layout_width="0dp"
+				    android:layout_height="wrap_content"
+				    android:drawableLeft="@drawable/fb_logo_xs"
+				    android:text="@string/loginFbDescription"
+				    android:background="#2f477c"
+				    android:textColor="#FFFFFF"
+				    android:layout_weight="6" 
+				    android:paddingLeft="5dp"
+				    android:paddingRight="5dp"
+				    />
 	    </LinearLayout>
 	    
 		<RelativeLayout
@@ -128,7 +161,6 @@
 		android:layout_height="wrap_content"
 		android:layout_alignParentBottom="true"
 		android:layout_below="@+id/buttonFB"
-		android:background="#464547"
 		android:gravity="center" >
 	    
 			<LinearLayout
@@ -160,8 +192,8 @@
 				android:text="@string/accountLink"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:textColorLink="#ffd400"
-				android:textColor="#ffd400"
+				android:textColorLink="#971e49"
+				android:textColor="#971e49"
 				/>
 			</LinearLayout>	
     	</RelativeLayout>

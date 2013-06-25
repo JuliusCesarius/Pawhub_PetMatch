@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,7 +18,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.Menu;
@@ -28,7 +28,7 @@ import com.blastic.utilities.ActionBarHandler;
 
 
 @SuppressLint("SimpleDateFormat")
-public class EditUserActivity extends FragmentActivity {
+public class EditUserActivity extends Activity {
 
 	private ImageView pickPhoto;
 	private ImageView takePhoto;
@@ -62,8 +62,6 @@ public class EditUserActivity extends FragmentActivity {
 	}
 
 	public void onBtnFinish_Click(View v) {
-
-
 		Intent ratePetIntend = new Intent(this, MainTabsActivity.class);
 		startActivity(ratePetIntend);
 	}
@@ -92,19 +90,19 @@ public class EditUserActivity extends FragmentActivity {
 
 	}
 
-	public void showUserDialog() {
+	/*public void showUserDialog() {
 		FragmentManager fragment = getSupportFragmentManager();
 		ChoorserDialog chooser = new ChoorserDialog();
 
 		chooser.show(fragment, "Dialog");
-	}
+	}*/
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		Log.i("prueba", "result");
 		/**
-		 * Se revisa si la imagen viene de la cï¿½mara (TAKE_PICTURE) o de la
-		 * galerï¿½a (SELECT_PICTURE)
+		 * Se revisa si la imagen viene de la c‡mara (TAKE_PICTURE) o de la
+		 * galer’a (SELECT_PICTURE)
 		 */
 		if (requestCode == TAKE_PICTURE) {
 			/**
@@ -113,7 +111,7 @@ public class EditUserActivity extends FragmentActivity {
 			 */
 			if (data != null) {
 				/**
-				 * En el caso de una vista previa, obtenemos el extra ï¿½dataï¿½ del
+				 * En el caso de una vista previa, obtenemos el extra ÒdataÓ del
 				 * intent y lo mostramos en el ImageView
 				 */
 				if (data.hasExtra("data")) {
@@ -121,8 +119,8 @@ public class EditUserActivity extends FragmentActivity {
 							.getParcelableExtra("data"));
 					pickPhoto.setVisibility(View.INVISIBLE);
 					/**
-					 * Para guardar la imagen en la galerï¿½a, utilizamos una
-					 * conexiï¿½n a un MediaScanner
+					 * Para guardar la imagen en la galer’a, utilizamos una
+					 * conexi—n a un MediaScanner
 					 */
 					new MediaScannerConnectionClient() {
 						private MediaScannerConnection msc = null;

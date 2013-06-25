@@ -2,52 +2,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
-    android:fillViewport="true" >
+    android:fillViewport="true"
+     >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#464547"
-        android:baselineAligned="false"
+		android:baselineAligned="false"
+        android:background="@drawable/pet_collage_gray"
         android:orientation="vertical"
         tools:context=".MainActivity" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical" >
+		<LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="0dp"
+		    android:layout_gravity="center"
+		    android:gravity="center"
+		    android:layout_weight="1"
+		    android:orientation="vertical">    
 
-            <ImageButton
-                android:id="@+id/btnRateAPet"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@null"
-                android:contentDescription="@string/lblRatePet"
-                android:onClick="onBtnRate_Click"
-                android:src="@drawable/btn_rate_a_pet" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:gravity="center" >
+	        <ImageButton
+				android:id="@+id/btnRateAPet"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/btn_rate_a_pet"
+				android:background="@null"
+				android:contentDescription="@string/lblRatePet"
+           		android:onClick="onBtnRate_Click"
+           		android:layout_gravity="center"
+			/>
 
-            <ImageButton
-                android:id="@+id/btnPetMatch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@null"
-                android:contentDescription="@string/lblPetMatch"
-                android:onClick="onBtnMatch_Click"
-                android:src="@drawable/btn_match" />
+
+		</LinearLayout>
+		<LinearLayout
+		    android:layout_width="match_parent"
+			android:layout_height="0dp"
+		    android:layout_gravity="center"
+		    android:gravity="center"
+		    android:layout_weight="1">	
+	        <ImageButton
+				android:id="@+id/btnPetMatch"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/btn_match"
+				android:background="@null"
+				android:contentDescription="@string/lblPetMatch"
+            	android:onClick="onBtnMatch_Click"
+            	android:layout_gravity="center"
+			/>
         </LinearLayout>
     </LinearLayout>
 
