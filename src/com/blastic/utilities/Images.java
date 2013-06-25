@@ -1,6 +1,7 @@
 package com.blastic.utilities;
 
 import android.app.Activity;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
@@ -78,6 +79,17 @@ public final class Images {
 		imageView.setImageDrawable(drawable);
 		
 	}
+	
+	public static Drawable cropImageCorner(int idImageResource, int idImageView, Resources resources)
+	{
+		Bitmap tempBMP = BitmapFactory.decodeResource(resources,idImageResource);
+		Drawable drawable = new BitmapDrawable(resources,Images.getRoundedCornerBitmap(tempBMP));
+		
+		return drawable;
+		
+	}
+	
+	
 	public static Drawable cropImageCorner(Drawable drawable, Activity activity)
 	{
 		Bitmap bitmap = drawableToBitmap(drawable);
