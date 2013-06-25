@@ -9,16 +9,22 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.blastic.utilities.ActionBarHandler;
+
 
 public class LoginActivity extends Activity {
 	
+	private final String ENTER_USERNAME="Enter a username";
+	private final String ENTER_PASSWORD="Enter password";
+	
 	ImageButton btnLogin;
+	
 
 	@Override 
 	protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_login);
-
+	ActionBarHandler.hide(this);
 	btnLogin = (ImageButton) findViewById(R.id.loginPawHubButton);
 }
 
@@ -36,11 +42,11 @@ public void onBtnPHLogin_Click(View v){
 	TextView password = (TextView) findViewById(R.id.txtPassword);
 	
 	if(user.getText().toString().equals("")){
-		Toast.makeText(getApplicationContext(), "Enter a username", Toast.LENGTH_SHORT).show();
+		Toast.makeText(getApplicationContext(), ENTER_USERNAME, Toast.LENGTH_SHORT).show();
 		return;
 		}
 	else if(password.getText().toString().equals("")){
-		Toast.makeText(getApplicationContext(), "Enter Password", Toast.LENGTH_SHORT).show();
+		Toast.makeText(getApplicationContext(), ENTER_PASSWORD, Toast.LENGTH_SHORT).show();
 		return;
 	}
 	

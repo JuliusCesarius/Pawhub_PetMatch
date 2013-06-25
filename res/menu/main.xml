@@ -2,21 +2,28 @@
 
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="200"
+        android:orderInCategory="300"
         android:showAsAction="never"
         android:title="@string/action_settings"/>
     
     <item 
-        android:id="@+id/action_edit_user"
+        android:id="@+id/action_profile"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/editUser"/>
+        android:title="@string/profile"/>
     
     <item 
-        android:id="@+id/action_log_out"
-        android:orderInCategory="300"
+        android:id="@+id/action_my_pets"
+        android:orderInCategory="200"
         android:showAsAction="never"
-        android:title="@string/logout"
+        android:title="@string/my_pets"
+        />
+    
+    <item 
+        android:id="@+id/action_about"
+        android:orderInCategory="400"
+        android:showAsAction="never"
+        android:title="@string/about"
         />
 
 </menu>

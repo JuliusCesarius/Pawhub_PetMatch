@@ -26,9 +26,9 @@ public final class Images {
 
         final Path path = new Path();
         path.addCircle(
-                  (float)(width / 2)
-                , (float)(height / 2)
-                , (float) Math.min(width, (height / 2))
+                  width / 2
+                , height / 2
+                , Math.min(width, (height / 2))
                 , Path.Direction.CCW);
 
         final Canvas canvas = new Canvas(outputBitmap);
@@ -77,5 +77,29 @@ public final class Images {
 		ImageView imageView = (ImageView)activity.findViewById(idImageView);
 		imageView.setImageDrawable(drawable);
 		
+	}
+	public static Drawable cropImageCorner(Drawable drawable, Activity activity)
+	{
+		Bitmap bitmap = drawableToBitmap(drawable);
+		Drawable output = new BitmapDrawable(activity.getResources(),Images.getRoundedCornerBitmap(bitmap));
+		return output;
+	}
+	
+	public static Bitmap drawableToBitmap (Drawable drawable) {
+	    if (drawable instanceof BitmapDrawable) {
+	        return ((BitmapDrawable)drawable).getBitmap();
+	    }
+
+	    int width = drawable.getIntrinsicWidth();
+	    width = width > 0 ? width : 1;
+	    int height = drawable.getIntrinsicHeight();
+	    height = height > 0 ? height : 1;
+
+	    Bitmap bitmap = Bitmap.createBitmap(width, height, Config.ARGB_8888);
+	    Canvas canvas = new Canvas(bitmap); 
+	    drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+	    drawable.draw(canvas);
+
+	    return bitmap;
 	}
 }

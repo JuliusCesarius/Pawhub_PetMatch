@@ -29,6 +29,7 @@ import com.blastic.adapters.JsonAdapter;
 import com.blastic.clases.GenericAsyncTask;
 import com.blastic.clases.PetBasic;
 import com.blastic.clases.TopCategory;
+import com.blastic.utilities.ActionBarHandler;
 import com.blastic.utilities.Images;
 
 public class DetailsRate extends Activity {
@@ -47,6 +48,8 @@ public class DetailsRate extends Activity {
 		Integer intValue = mIntent.getIntExtra("intval", 0);
 		Log.i("valor", ""+value);
 		Log.i("valor", ""+intValue);
+		
+		ActionBarHandler.setActionBar(this);
 		
 		Bitmap bitmap = Images.GetBitmapClippedCircle(BitmapFactory
 				.decodeResource(getResources(), R.drawable.greenbackground));
@@ -75,7 +78,7 @@ public class DetailsRate extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.details_rate, menu);
+		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 	

@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import com.blastic.adapters.SpinKindAdapter;
 import com.blastic.clases.GenericAsyncTask;
 import com.blastic.clases.Kind;
+import com.blastic.utilities.ActionBarHandler;
 
 public class EditPetActivity extends Activity {
 
@@ -40,13 +41,15 @@ public class EditPetActivity extends Activity {
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
 		spinnerBreed.setAdapter(adapterBreed);
+		
+		ActionBarHandler.setActionBar(this);
 
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.edit_pet, menu);
+		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 

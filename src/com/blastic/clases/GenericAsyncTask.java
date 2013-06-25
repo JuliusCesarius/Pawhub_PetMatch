@@ -12,13 +12,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.blastic.adapters.JsonAdapter;
-
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+
+import com.blastic.adapters.JsonAdapter;
 
 public class GenericAsyncTask<T> extends AsyncTask<String, Void, ArrayList<T>> {
 	private Class<T> type;

@@ -22,11 +22,23 @@
 	        android:layout_height="wrap_content"
 	        android:text="@string/textPreferences" />
 	    
+	    <RelativeLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/information"
+	        android:id="@+id/containerLayout"
+	        android:paddingBottom="28dp"
+		    android:paddingLeft="@dimen/activity_horizontal_margin"
+		    android:paddingRight="@dimen/activity_horizontal_margin"
+		    android:paddingTop="@dimen/activity_vertical_margin"
+		    android:layout_marginBottom="@dimen/activity_vertical_margin"
+		    android:layout_marginTop="@dimen/activity_vertical_margin"
+		    android:background="@drawable/corner_round">
+	    
 	    <TableLayout 
 	        android:id="@+id/ratingLayout"
 	        android:layout_width="fill_parent"
 	    	android:layout_height="wrap_content"
-	    	android:layout_below="@+id/information"
 	        >
 	        
 	        <TableRow 
@@ -43,7 +55,8 @@
 					android:layout_height="wrap_content"
 					android:text="@string/lovelyText"
 					android:layout_gravity="left|center_vertical"
-					android:layout_weight="1"                
+					android:layout_weight="1"
+					android:textColor="#FFFFFF"                
 	                />
 
 	            <RatingBar
@@ -69,7 +82,8 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="left|center_vertical"
 	                android:text="@string/cutenessText"
-	                android:layout_weight="1" />
+	                android:layout_weight="1"
+	                android:textColor="#FFFFFF" />
 
 	            <RatingBar
 	                android:id="@+id/cutenessRating"
@@ -94,7 +108,8 @@
 					android:layout_height="wrap_content"
 					android:text="@string/softnessText"
 					android:layout_gravity="left|center_vertical"   
-					android:layout_weight="1"        
+					android:layout_weight="1"  
+					android:textColor="#FFFFFF"      
 	                />
 
 	            <RatingBar
@@ -121,7 +136,8 @@
 					android:layout_height="wrap_content"
 					android:text="@string/funnyText"
 					android:layout_gravity="left|center_vertical"
-					android:layout_weight="1"                
+					android:layout_weight="1"  
+					android:textColor="#FFFFFF"              
 	                />
 
 	            <RatingBar
@@ -157,7 +173,9 @@
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:text="@string/sameType"
+	            android:textColor="#FFFFFF"
 	            />
+	        
 	        
 	    </LinearLayout>
 	    
@@ -179,23 +197,25 @@
 	        android:layout_alignTop="@+id/imgPetToRate"
 	        android:contentDescription="@string/contentDescriptionPetMatch"
 	        android:src="@drawable/petask" />
+	    
+	    </RelativeLayout>
 	
 	    <LinearLayout
-	        android:layout_width="wrap_content"
-	        android:layout_height="fill_parent"
-	        android:layout_alignLeft="@+id/imgPetToRate"
-	        android:layout_alignRight="@+id/imgAskPet"
-	        android:layout_below="@+id/imgPetToRate"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/containerLayout"
 	        android:gravity="center_vertical|center_horizontal" 
+	        
 	        android:weightSum="10">
 	    
 		    <Button
                 android:id="@+id/btnMatch"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:background="#84c33e"
+                android:layout_weight="8"
+                android:background="@drawable/gradient_purple"
                 android:text="@string/btnMatch"
+                android:textColor="#FFFFFF"
                 android:onClick="onBtnMatch_Click" />
 		    
 		    

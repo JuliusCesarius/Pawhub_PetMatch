@@ -10,45 +10,48 @@
     android:paddingTop="5dp" >
 
     <LinearLayout
-        android:id="@+id/layoutVTable"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:background="#464648"
-        android:orientation="vertical"
+        android:layout_width="155dp"
+        android:layout_height="175dp"
         android:layout_weight="2"
-         >
+        android:gravity="center"
+        android:orientation="vertical" >
 
-        <WebView
-            android:id="@+id/lblPetRatesPicture"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
+        <LinearLayout
+            android:id="@+id/layoutTop20Conteiner"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/corner_round"
             android:layout_marginTop="15dp"
-            android:contentDescription="@string/lblPetPicture"
             android:paddingBottom="2dp"
-            android:src="@drawable/pet_picture" >
-        </WebView>
+            android:gravity="center"
+             >
+
+            <WebView
+                android:id="@+id/lblPetRatesPicture"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/lblPetPicture"
+                android:src="@drawable/pet_picture" >
+            </WebView>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/lblPetNameRates"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
             android:paddingTop="2dp"
             android:text="Name"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold" >
+            android:textColor="#981E48"
+            android:textSize="19sp" >
         </TextView>
 
         <TextView
             android:id="@+id/lblPetVotes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingTop="2dp"
             android:text="Votes"
-            android:textColor="#FFFFFF"
+            android:textColor="#4ABCCE"
             android:textSize="10sp"
             android:textStyle="bold" >
         </TextView>

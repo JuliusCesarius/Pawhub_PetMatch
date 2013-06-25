@@ -41,6 +41,7 @@ ListView listMyRates;
 		String urlString = "http://wskrs.com/PetRateService/GetTopCategories";
 		getTopCategoryAsyncTask = new GetTopCategoryAsyncTask(TopCategory.class);
 		getTopCategoryAsyncTask.execute(urlString);
+
 		
 		return V;
     	

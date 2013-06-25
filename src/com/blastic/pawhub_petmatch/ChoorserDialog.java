@@ -1,17 +1,8 @@
 package com.blastic.pawhub_petmatch;
 
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.MediaScannerConnection;
-import android.media.MediaScannerConnection.MediaScannerConnectionClient;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.util.Log;
@@ -20,8 +11,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 public class ChoorserDialog extends DialogFragment {
 
@@ -36,7 +25,7 @@ public class ChoorserDialog extends DialogFragment {
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 
-		getDialog().setTitle("Elija una opción...");
+		getDialog().setTitle("Elija una opciï¿½n...");
 
 		View view = inflater.inflate(R.layout.dialog_fragment_chooser,
 				container);
@@ -49,7 +38,7 @@ public class ChoorserDialog extends DialogFragment {
 
 			@Override
 			public void onClick(View v) {
-				Log.i("Presionó", "Camara");
+				Log.i("Presionï¿½", "Camara");
 				cameraIntent = new Intent(
 				android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
 				startActivityForResult(cameraIntent, REQUEST_CAMERA);
@@ -62,7 +51,7 @@ public class ChoorserDialog extends DialogFragment {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Log.i("Presionó", "Galery");
+				Log.i("Presionï¿½", "Galery");
 				if (path != null) {
 					File imgFile = new File(path);
 					if (imgFile.exists()) {
@@ -82,13 +71,13 @@ public class ChoorserDialog extends DialogFragment {
 
 //	@Override
 //	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//		Log.i("Presionó", "Camara");
+//		Log.i("Presionï¿½", "Camara");
 //		if (requestCode == REQUEST_CAMERA) {
-//			Log.i("Presionó", "Camara");
+//			Log.i("Presionï¿½", "Camara");
 //			ImageView iv = (ImageView) view2.findViewById(R.id.userPicture);
 //			iv.setImageBitmap(BitmapFactory.decodeFile(path));
 //			/**
-//			 * Para guardar la imagen en la galer’a, utilizamos una conexi—n a
+//			 * Para guardar la imagen en la galerï¿½a, utilizamos una conexiï¿½n a
 //			 * un MediaScanner
 //			 */
 //			new MediaScannerConnectionClient() {
@@ -108,7 +97,7 @@ public class ChoorserDialog extends DialogFragment {
 //			};
 //			dismiss();
 //		} else if (requestCode == REQUEST_SELECT_FOTO) {
-//			Log.i("Presionó", "Camara");
+//			Log.i("Presionï¿½", "Camara");
 //			Uri selectedImage = data.getData();
 //			InputStream is;
 //			try {

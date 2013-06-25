@@ -2,6 +2,8 @@ package com.blastic.adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,14 +30,17 @@ public class ListViewMyRatesAdapter extends ArrayAdapter<TopCategory> {
 		this.values = values;
 	}
 
+	@Override
 	public int getCount() {
 		return values.length;
 	}
 
+	@Override
 	public TopCategory getItem(int position) {
 		return values[position];
 	}
 
+	@Override
 	public long getItemId(int position) {
 		return position;
 	}
@@ -49,8 +54,10 @@ public class ListViewMyRatesAdapter extends ArrayAdapter<TopCategory> {
 		if (view == null) {
 			LayoutInflater inflater = (LayoutInflater) context
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
+ 
 			view = inflater.inflate(R.layout.rowlayout, null);
+			
+			view.findViewById(R.id.rowlayoutContainer).getBackground().setColorFilter(Color.rgb(218, 219, 219), PorterDuff.Mode.SRC_ATOP);
 
 			holder = new ViewHolder();
 			view.setTag(holder);
@@ -91,8 +98,8 @@ public class ListViewMyRatesAdapter extends ArrayAdapter<TopCategory> {
 
 			StringBuilder builder = new StringBuilder();
 
-			builder.append("<html><body>");
-			builder.append("<img style='width: 50px; height: 50px; margin: -8px auto auto -8px;' src='"
+			builder.append("<html><body style='background: #DADBDB;'>");
+			builder.append("<img style='width: 74px; height: 74px; margin: -8px auto auto -8px; border-radius: 5px;' src='"
 					+ url + "' />");
 			builder.append("</body></html>");
 
