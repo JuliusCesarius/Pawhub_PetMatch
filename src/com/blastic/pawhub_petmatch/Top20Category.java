@@ -18,16 +18,12 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
-import android.view.View.OnTouchListener;
 import android.webkit.WebView;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -218,12 +214,10 @@ public class Top20Category extends Activity {
 							lblPetId.setText(element.getPetid());
 
 							lblPetRatesPicture
-									.setOnTouchListener(new OnTouchListener() {
+									.setOnLongClickListener(new OnLongClickListener() {
 
 										@Override
-										public boolean onTouch(View arg0,
-												MotionEvent arg1) {
-
+										public boolean onLongClick(View v) {
 											Intent intent = new Intent(
 													Top20Category.this,
 													DetailsRate.class)
@@ -232,8 +226,7 @@ public class Top20Category extends Activity {
 											intent.putExtra("intval", intValue);
 											Top20Category.this
 													.startActivity(intent);
-
-											return true;
+											return false;
 										}
 
 									});
