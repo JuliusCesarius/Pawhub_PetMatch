@@ -13,24 +13,17 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ListView;
-import android.widget.TableRow;
+import android.widget.TextView;
 
 import com.blastic.adapters.JsonAdapter;
 import com.blastic.clases.GenericAsyncTask;
 import com.blastic.clases.PetBasic;
-import com.blastic.clases.TopCategory;
 import com.blastic.utilities.ActionBarHandler;
-import com.blastic.utilities.Images;
 
 public class DetailsRate extends Activity {
 
@@ -41,7 +34,12 @@ public class DetailsRate extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_details_rate);
-
+		
+		ActionBarHandler.setActionBar(this);
+		
+		TextView text = (TextView) findViewById(R.id.valueRateTxtView);
+		text.setBackgroundColor(Color.rgb(152,30,72));
+		/*
 		// llama el valor pasado por Globalrates
 		Intent mIntent = getIntent();
 		String value = mIntent.getStringExtra("variableName");
@@ -49,7 +47,7 @@ public class DetailsRate extends Activity {
 		Log.i("valor", "" + value);
 		Log.i("valor", "" + intValue);
 
-		ActionBarHandler.setActionBar(this);
+		
 
 		Bitmap bitmap = Images.GetBitmapClippedCircle(BitmapFactory
 				.decodeResource(getResources(), R.drawable.greenbackground));
@@ -58,7 +56,7 @@ public class DetailsRate extends Activity {
 		TableRow tableRow = (TableRow) findViewById(R.id.valueRate);
 		// tableRow.setBackground(drawable);
 
-		/*
+		
 		 * Jalé las mismas mascotas en global, my rates y en top20Category, si
 		 * se jala el id de la actividad pasada no hay información al menos q el
 		 * idPet y la cat coincidan:
@@ -87,6 +85,7 @@ public class DetailsRate extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
+		
 		return true;
 	}
 
