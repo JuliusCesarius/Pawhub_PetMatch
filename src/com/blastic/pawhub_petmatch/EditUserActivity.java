@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,16 +18,17 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.blastic.utilities.ActionBarHandler;
+
 
 @SuppressLint("SimpleDateFormat")
-public class EditUserActivity extends FragmentActivity {
+public class EditUserActivity extends Activity {
 
 	private ImageView pickPhoto;
 	private ImageView takePhoto;
@@ -39,6 +41,8 @@ public class EditUserActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_user);
+		
+		ActionBarHandler.setActionBar(this);
 
 		pickPhoto = (ImageView) findViewById(R.id.userPickPicture);
 		takePhoto = (ImageView) findViewById(R.id.userTakePicture);
@@ -53,12 +57,11 @@ public class EditUserActivity extends FragmentActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.edit_user, menu);
+		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 
 	public void onBtnFinish_Click(View v) {
-
 		Intent ratePetIntend = new Intent(this, MainTabsActivity.class);
 		startActivity(ratePetIntend);
 	}
@@ -87,13 +90,14 @@ public class EditUserActivity extends FragmentActivity {
 
 	}
 
-	public void showUserDialog() {
+	/*public void showUserDialog() {
 		FragmentManager fragment = getSupportFragmentManager();
 		ChoorserDialog chooser = new ChoorserDialog();
 
 		chooser.show(fragment, "Dialog");
-	}
+	}*/
 
+	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		Log.i("prueba", "result");
 		/**
@@ -126,10 +130,12 @@ public class EditUserActivity extends FragmentActivity {
 							msc.connect();
 						}
 
+						@Override
 						public void onMediaScannerConnected() {
 							msc.scanFile(name, null);
 						}
 
+						@Override
 						public void onScanCompleted(String path, Uri uri) {
 							msc.disconnect();
 						}

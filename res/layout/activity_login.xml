@@ -8,44 +8,59 @@
 	<RelativeLayout
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-	    android:paddingTop="@dimen/activity_vertical_margin"
 	    tools:context=".LoginActivity" 
-	    android:background="@drawable/gradient">
+	    android:background="@drawable/pet_collage_gray">
 	
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="105dp"
+	        android:background="@drawable/gradient_purple" >
+
+	    </LinearLayout>
 	
+	    
+	    
 	    <ImageView
 	        android:id="@+id/logoImage"
 	        android:contentDescription="@string/logoDescription"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:src="@drawable/logopawhub"
+	        android:layout_width="160dp"
+	        android:layout_height="160dp"
+	        android:src="@drawable/login_logo"
 	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="25dp"
+	        android:layout_marginBottom="25dp"
 	      />
 	     
 	    <LinearLayout
 	        android:id="@+id/userEditLayout"
-	        android:layout_width="fill_parent"
+	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/logoImage"
 	        android:gravity="center"
 	        android:weightSum="10"
+	        android:layout_marginBottom="30dp"
 	        >
 	     
-			<EditText
-			android:id="@+id/txtUser"
-			android:inputType="text"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:hint="@string/userEditText"
-			android:layout_weight="6"
-			/>
+	        
+				<EditText
+					android:id="@+id/txtUser"
+					android:inputType="text"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:hint="@string/userEditText"
+					android:layout_weight="6"
+					android:background="@drawable/border_edit_text"
+					android:textAlignment="center"
+					
+				/>
 	    
 	    </LinearLayout>
 	    
 	    
 	    <LinearLayout
 	        android:id="@+id/passwordEditLayout"
-	        android:layout_width="fill_parent"
+	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/userEditLayout"
 	        android:gravity="center"
@@ -59,31 +74,54 @@
 				android:layout_height="wrap_content"
 				android:hint="@string/passwordEditText"
 				android:layout_weight="6"
+				android:background="@drawable/border_edit_text"
+				
 			/>
 	    
 	    </LinearLayout>
 	    
 		<LinearLayout
 		android:id="@+id/buttonPH"
-		android:layout_width="fill_parent"
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_below="@+id/passwordEditLayout"
 		android:gravity="center"
 		android:paddingBottom="20dp"
-		android:paddingTop="50dp"
+		android:paddingTop="30dp"
+		android:weightSum="10"
 		>
 	
-			<ImageButton
-			android:id="@+id/loginPawHubButton"
-			android:contentDescription="@string/loginPawhubDescription"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:src="@drawable/loginpawhub"
-			android:background="@null"
-			android:onClick="onBtnPHLogin_Click"
-			/>
+<!-- 			<ImageButton -->
+<!-- 			android:id="@+id/loginPawHubButton" -->
+<!-- 			android:contentDescription="@string/loginPawhubDescription" -->
+<!-- 			android:layout_width="wrap_content" -->
+<!-- 			android:layout_height="wrap_content" -->
+<!-- 			android:src="@drawable/loginpawhub" -->
+<!-- 			android:background="@null" -->
+<!-- 			android:onClick="onBtnPHLogin_Click" -->
+<!-- 			/> -->
+
+				<Button
+				    android:id="@+id/loginPawHubButton"
+				    android:layout_width="0dp"
+				    android:layout_height="wrap_content"
+				    android:drawableLeft="@drawable/icono_xs"
+				    android:text="@string/loginPawhubDescription"
+				    android:background="@drawable/gradient_purple"
+				    android:textColor="#FFFFFF"
+				    android:layout_weight="6" 
+				    android:paddingLeft="5dp"
+				    android:paddingRight="5dp"
+				    android:onClick="onBtnPHLogin_Click"
+				    />
 			
 	    </LinearLayout>
+	    
+		
+		
+	    
+		
+		
 	    
 		<LinearLayout
 		android:id="@+id/buttonFB"
@@ -92,16 +130,30 @@
 		android:layout_below="@+id/buttonPH"
 		android:paddingBottom="80dp"
 		android:gravity="center"
+		android:weightSum="10"
 		>
 	
-			<ImageButton
-			android:id="@+id/loginFbButton"
-			android:contentDescription="@string/loginFbDescription"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:src="@drawable/loginfb"
-			android:background="@null"
-			/>
+<!-- 			<ImageButton -->
+<!-- 			android:id="@+id/loginFbButton" -->
+<!-- 			android:contentDescription="@string/loginFbDescription" -->
+<!-- 			android:layout_width="wrap_content" -->
+<!-- 			android:layout_height="wrap_content" -->
+<!-- 			android:src="@drawable/loginfb" -->
+<!-- 			android:background="@null" -->
+<!-- 			/> -->
+			
+			<Button
+				    android:id="@+id/loginFbButton"
+				    android:layout_width="0dp"
+				    android:layout_height="wrap_content"
+				    android:drawableLeft="@drawable/fb_logo_xs"
+				    android:text="@string/loginFbDescription"
+				    android:background="#2f477c"
+				    android:textColor="#FFFFFF"
+				    android:layout_weight="6" 
+				    android:paddingLeft="5dp"
+				    android:paddingRight="5dp"
+				    />
 	    </LinearLayout>
 	    
 		<RelativeLayout
@@ -109,7 +161,6 @@
 		android:layout_height="wrap_content"
 		android:layout_alignParentBottom="true"
 		android:layout_below="@+id/buttonFB"
-		android:background="#7D7979"
 		android:gravity="center" >
 	    
 			<LinearLayout
@@ -124,8 +175,8 @@
 				android:text="@string/forgotPasswordLink"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:textColorLink="#ffffff"
-				android:textColor="#ffffff"
+				android:textColorLink="#4abccc"
+				android:textColor="#4abccc"
 				/>
 				
 		     </LinearLayout>
@@ -141,8 +192,8 @@
 				android:text="@string/accountLink"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:textColorLink="#ffffff"
-				android:textColor="#ffffff"
+				android:textColorLink="#971e49"
+				android:textColor="#971e49"
 				/>
 			</LinearLayout>	
     	</RelativeLayout>

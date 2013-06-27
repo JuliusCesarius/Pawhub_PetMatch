@@ -1,155 +1,183 @@
 <ScrollView xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true" xmlns:android="http://schemas.android.com/apk/res/android"
-  	>
+    android:fillViewport="true" >
 
-    <RelativeLayout android:id="@+id/RateMyPetLayout"
+    <RelativeLayout
+        android:id="@+id/RateMyPetLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/gradient"
+        android:background="@drawable/pet_collage_gray"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context=".RateMyPetActivity" >
 
-
-        <ImageView
-            android:id="@+id/imgPet"
+        <LinearLayout
+            android:id="@+id/RateMyPetContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/setRatingsLayout"
-            android:contentDescription="@string/contentDescriptionImgPet"
-            android:scaleType="centerCrop"
-            android:src="@drawable/petimage" />
+            android:background="@drawable/corner_round"
+            android:orientation="vertical" >
 
-        <TableLayout
-            android:id="@+id/setRatingsLayout"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imgPet"
-            android:layout_marginBottom="20dp"
-            android:background="#464648"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin" >
+            <ImageView
+                android:id="@+id/imgPet"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/corner_round"
+                android:contentDescription="@string/contentDescriptionImgPet"
+                android:scaleType="fitXY"
+                android:src="@drawable/petimage" />
 
-            <TableRow
-                android:id="@+id/lovelyRow"
+            <TextView
+                android:id="@+id/lblPetNameRate"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="#4ABCCE"
+                android:gravity="center"
+                android:text="@string/petName"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TableLayout
+                android:id="@+id/setRatingsLayout"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp" >
+                android:layout_marginBottom="20dp"
+                android:background="#464648"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin" >
 
-                <TextView
-                    android:id="@+id/lovelyText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left|center_vertical"
-                    android:layout_weight="1"
-                    android:text="@string/lovelyText"
-                    android:textColor="#FFFFFF" />
+                <TableRow
+                    android:id="@+id/funnyRow"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
 
-                <RatingBar
-                    android:id="@+id/lovelyRating"
-                    style="@style/CustomRatingBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_gravity="right|center_vertical"
-                    android:numStars="5"
-                    android:rating="2.0"
-                    android:stepSize="1" />
-            </TableRow>
+                    <TextView
+                        android:id="@+id/funnyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_weight="1"
+                        android:text="@string/funnyText"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
 
-            <TableRow
-                android:id="@+id/cutenessRow"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+                    <RatingBar
+                        android:id="@+id/funnyRating"
+                        style="@style/CustomRatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginTop="5dp"
+                        android:numStars="5"
+                        android:rating="2.0"
+                        android:stepSize="1" />
+                </TableRow>
 
-                <TextView
-                    android:id="@+id/cutenessText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left|center_vertical"
-                    android:layout_weight="1"
-                    android:text="@string/cutenessText"
-                    android:textColor="#FFFFFF" />
+                <TableRow
+                    android:id="@+id/toughRow"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
 
-                <RatingBar
-                    android:id="@+id/cutenessRating"
-                    style="@style/CustomRatingBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_gravity="right"
-                    android:numStars="5"
-                    android:rating="2.0"
-                    android:stepSize="1" />
-            </TableRow>
+                    <TextView
+                        android:id="@+id/toughText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_weight="1"
+                        android:text="@string/toughText"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
 
-            <TableRow
-                android:id="@+id/softnessRow"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+                    <RatingBar
+                        android:id="@+id/toughRating"
+                        style="@style/CustomRatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_gravity="right"
+                        android:numStars="5"
+                        android:paddingTop="5dp"
+                        android:rating="2.0"
+                        android:stepSize="1" />
+                </TableRow>
 
-                <TextView
-                    android:id="@+id/softnessText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left|center_vertical"
-                    android:layout_weight="1"
-                    android:text="@string/softnessText"
-                    android:textColor="#FFFFFF" />
+                <TableRow
+                    android:id="@+id/sexyRow"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
 
-                <RatingBar
-                    android:id="@+id/softnessRating"
-                    style="@style/CustomRatingBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:numStars="5"
-                    android:rating="2.0"
-                    android:stepSize="1" />
-            </TableRow>
+                    <TextView
+                        android:id="@+id/sexyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_weight="1"
+                        android:text="@string/sexyText"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
 
-            <TableRow
-                android:id="@+id/funnyRow"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+                    <RatingBar
+                        android:id="@+id/sexyRating"
+                        style="@style/CustomRatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="5dp"
+                        android:numStars="5"
+                        android:rating="2.0"
+                        android:stepSize="1" />
+                </TableRow>
 
-                <TextView
-                    android:id="@+id/funnyText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left|center_vertical"
-                    android:layout_weight="1"
-                    android:text="@string/funnyText"
-                    android:textColor="#FFFFFF" />
+                <TableRow
+                    android:id="@+id/cuddlyRow"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
 
-                <RatingBar
-                    android:id="@+id/funnyRating"
-                    style="@style/CustomRatingBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:numStars="5"
-                    android:rating="2.0"
-                    android:stepSize="1" />
-            </TableRow>
-        </TableLayout>
+                    <TextView
+                        android:id="@+id/cuddlyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_weight="1"
+                        android:text="@string/cuddlyText"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                    <RatingBar
+                        android:id="@+id/cuddlyRating"
+                        style="@style/CustomRatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="5dp"
+                        android:numStars="5"
+                        android:rating="2.0"
+                        android:stepSize="1" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/setRatingsLayout"
+            android:layout_below="@+id/RateMyPetContainer"
             android:gravity="center"
-            android:weightSum="10" >
+            android:weightSum="10"
+            android:layout_marginTop="20dp"
+             >
 
             <Button
                 android:id="@+id/btnRatePet"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="6"
-                android:background="#84c33e"
-                android:text="@string/btnRatePet" />
+                android:background="@drawable/gradient_purple"
+                android:text="@string/btnRatePet"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
     </RelativeLayout>
 

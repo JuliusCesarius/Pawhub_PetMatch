@@ -1,50 +1,57 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:fillViewport="true"
      >
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_height="wrap_content"
+		android:baselineAligned="false"
+        android:background="@drawable/pet_collage_gray"
+        android:orientation="vertical"
         tools:context=".MainActivity" >
 
-        <ImageView
-            android:id="@+id/logoMain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="21dp"
-            android:contentDescription="@string/lblLogo"
-            android:src="@drawable/logo_main" />
+		<LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="0dp"
+		    android:layout_gravity="center"
+		    android:gravity="center"
+		    android:layout_weight="1"
+		    android:orientation="vertical">    
 
-        <ImageButton
-            android:id="@+id/btnRateAPet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/logoMain"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:contentDescription="@string/lblRatePet"
-            android:onClick="onBtnRate_Click"
-            android:src="@drawable/btn_rate_main" />
 
-        <ImageButton
-            android:id="@+id/btnPetMatch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/btnRateAPet"
-            android:layout_alignRight="@+id/btnRateAPet"
-            android:layout_below="@+id/btnRateAPet"
-            android:contentDescription="@string/lblPetMatch"
-            android:onClick="onBtnMatch_Click"
-            android:src="@drawable/btn_match_main" />
-    </RelativeLayout>
+	        <ImageButton
+				android:id="@+id/btnRateAPet"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/btn_rate_a_pet"
+				android:background="@null"
+				android:contentDescription="@string/lblRatePet"
+           		android:onClick="onBtnRate_Click"
+           		android:layout_gravity="center"
+			/>
+
+
+		</LinearLayout>
+		<LinearLayout
+		    android:layout_width="match_parent"
+			android:layout_height="0dp"
+		    android:layout_gravity="center"
+		    android:gravity="center"
+		    android:layout_weight="1">	
+	        <ImageButton
+				android:id="@+id/btnPetMatch"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/btn_match"
+				android:background="@null"
+				android:contentDescription="@string/lblPetMatch"
+            	android:onClick="onBtnMatch_Click"
+            	android:layout_gravity="center"
+			/>
+        </LinearLayout>
+    </LinearLayout>
 
 </ScrollView>
