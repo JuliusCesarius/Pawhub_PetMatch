@@ -54,86 +54,6 @@
                 android:paddingTop="@dimen/activity_vertical_margin" >
 
                 <TableRow
-                    android:id="@+id/lovelyRow"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" >
-
-                    <TextView
-                        android:id="@+id/lovelyText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|center_vertical"
-                        android:layout_weight="1"
-                        android:text="@string/lovelyText"
-                        android:textColor="#FFFFFF"
-                        android:textSize="20sp" />
-
-                    <RatingBar
-                        android:id="@+id/lovelyRating"
-                        style="@style/CustomRatingBar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:layout_gravity="right|center_vertical"
-                        android:layout_marginTop="5dp"
-                        android:numStars="5"
-                        android:rating="2.0"
-                        android:stepSize="1" />
-                </TableRow>
-
-                <TableRow
-                    android:id="@+id/cutenessRow"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" >
-
-                    <TextView
-                        android:id="@+id/cutenessText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|center_vertical"
-                        android:layout_weight="1"
-                        android:text="@string/cutenessText"
-                        android:textColor="#FFFFFF"
-                        android:textSize="20sp" />
-
-                    <RatingBar
-                        android:id="@+id/cutenessRating"
-                        style="@style/CustomRatingBar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:layout_gravity="right"
-                        android:numStars="5"
-                        android:paddingTop="5dp"
-                        android:rating="2.0"
-                        android:stepSize="1" />
-                </TableRow>
-
-                <TableRow
-                    android:id="@+id/softnessRow"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" >
-
-                    <TextView
-                        android:id="@+id/softnessText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|center_vertical"
-                        android:layout_weight="1"
-                        android:text="@string/softnessText"
-                        android:textColor="#FFFFFF"
-                        android:textSize="20sp" />
-
-                    <RatingBar
-                        android:id="@+id/softnessRating"
-                        style="@style/CustomRatingBar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:layout_marginTop="5dp"
-                        android:numStars="5"
-                        android:rating="2.0"
-                        android:stepSize="1" />
-                </TableRow>
-
-                <TableRow
                     android:id="@+id/funnyRow"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content" >
@@ -150,6 +70,86 @@
 
                     <RatingBar
                         android:id="@+id/funnyRating"
+                        style="@style/CustomRatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginTop="5dp"
+                        android:numStars="5"
+                        android:rating="2.0"
+                        android:stepSize="1" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/toughRow"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/toughText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_weight="1"
+                        android:text="@string/toughText"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                    <RatingBar
+                        android:id="@+id/toughRating"
+                        style="@style/CustomRatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_gravity="right"
+                        android:numStars="5"
+                        android:paddingTop="5dp"
+                        android:rating="2.0"
+                        android:stepSize="1" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/sexyRow"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/sexyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_weight="1"
+                        android:text="@string/sexyText"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                    <RatingBar
+                        android:id="@+id/sexyRating"
+                        style="@style/CustomRatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="5dp"
+                        android:numStars="5"
+                        android:rating="2.0"
+                        android:stepSize="1" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/cuddlyRow"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/cuddlyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_weight="1"
+                        android:text="@string/cuddlyText"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                    <RatingBar
+                        android:id="@+id/cuddlyRating"
                         style="@style/CustomRatingBar"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"

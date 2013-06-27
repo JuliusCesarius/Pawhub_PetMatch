@@ -30,9 +30,9 @@
     <!-- Strings para PetMatch Activity -->
 
     <string name="textPreferences">Choose the ideal characteristics for matching with you and your pets</string>
-    <string name="lovelyText">Lovely</string>
-    <string name="cutenessText">Cuteness</string>
-    <string name="softnessText">Softness</string>
+    <string name="toughText">Tough</string>
+    <string name="sexyText">Sexy</string>
+    <string name="cuddlyText">Cuddly</string>
     <string name="funnyText">Funny</string>
     <string name="sameType">Same Type</string>
     <string name="contentDescriptionPetMatch">Pet to Match</string>

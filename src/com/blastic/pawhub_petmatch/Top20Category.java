@@ -66,15 +66,13 @@ public class Top20Category extends Activity {
 		titulo = (TextView) findViewById(R.id.lblTop20);
 
 		if (intValue == 1)
-			titulo.setText("Top 20 More Softness");
+			titulo.setText("Top 20 More Funny");
 		if (intValue == 2)
-			titulo.setText("Top 20 More Hardness");
+			titulo.setText("Top 20 More Tough");
 		if (intValue == 3)
-			titulo.setText("Top 20 More Sex Appeal");
+			titulo.setText("Top 20 More Sexy");
 		if (intValue == 4)
-			titulo.setText("Top 20 More Cuteness");
-		if (intValue == 5)
-			titulo.setText("Top 20 More Huggable");
+			titulo.setText("Top 20 More Funny");
 	}
 
 	@Override

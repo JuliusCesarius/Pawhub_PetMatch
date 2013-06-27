@@ -53,22 +53,22 @@
                 android:paddingRight="@dimen/activity_horizontal_margin" >
 
                 <TableRow
-                    android:id="@+id/lovelyRow"
+                    android:id="@+id/funnyRow"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp" >
 
                     <TextView
-                        android:id="@+id/lovelyText"
+                        android:id="@+id/funnyText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left|center_vertical"
                         android:layout_weight="1"
-                        android:text="@string/lovelyText"
+                        android:text="@string/funnyText"
                         android:textColor="#FFFFFF" />
 
                     <RatingBar
-                        android:id="@+id/lovelyRating"
+                        android:id="@+id/funnyRating"
                         style="@style/CustomRatingBar"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
@@ -79,21 +79,21 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/cutenessRow"
+                    android:id="@+id/toughRow"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content" >
 
                     <TextView
-                        android:id="@+id/cutenessText"
+                        android:id="@+id/toughText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left|center_vertical"
                         android:layout_weight="1"
-                        android:text="@string/cutenessText"
+                        android:text="@string/toughText"
                         android:textColor="#FFFFFF" />
 
                     <RatingBar
-                        android:id="@+id/cutenessRating"
+                        android:id="@+id/toughRating"
                         style="@style/CustomRatingBar"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
@@ -104,21 +104,21 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/softnessRow"
+                    android:id="@+id/sexyRow"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content" >
 
                     <TextView
-                        android:id="@+id/softnessText"
+                        android:id="@+id/sexyText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left|center_vertical"
                         android:layout_weight="1"
-                        android:text="@string/softnessText"
+                        android:text="@string/sexyText"
                         android:textColor="#FFFFFF" />
 
                     <RatingBar
-                        android:id="@+id/softnessRating"
+                        android:id="@+id/sexyRating"
                         style="@style/CustomRatingBar"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
